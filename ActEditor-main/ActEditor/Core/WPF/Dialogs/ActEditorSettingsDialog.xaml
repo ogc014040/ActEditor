@@ -13,14 +13,15 @@
         <Border Background="{DynamicResource ResourceKey=TabControlBackground}">
             <Grid>
                 <TabControl Style="{DynamicResource ResourceKey=TabControlStyled}">
-                    <TabItem Header="General" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
+                    <TabItem Name="_tabGeneral" Header="General" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
                         <StackPanel>
                             <StackPanel>
-                                <Label Content="General" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
+                                <Label Name="_lblGeneralTitle" Content="General" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
                                 <Rectangle Margin="5 0 5 5" Stroke="#E3E9F1" VerticalAlignment="Stretch" />
                             </StackPanel>
                             <Grid>
                                 <Grid.RowDefinitions>
+                                    <RowDefinition />
                                     <RowDefinition />
                                     <RowDefinition />
                                     <RowDefinition />
@@ -41,58 +42,66 @@
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
-                                <Label Grid.Row="0" Content="Always reopen latest opened file" ToolTipService.ShowDuration="1000000">
+                                <Label Name="_lblReopenLatest" Grid.Row="0" Content="Always reopen latest opened file" ToolTipService.ShowDuration="1000000">
                                     <Label.ToolTip>
-                                        <TextBlock>
-                                            If checked, when opening the application, the last opened sprite 
+                                        <TextBlock Name="_ttReopenLatest">
+                                            If checked, when opening the application, the last opened sprite
                                             <LineBreak />
                                             will from the recent files menu will be opened.
                                         </TextBlock>
                                     </Label.ToolTip>
                                 </Label>
-                                <Label Grid.Row="7" Content="Show horizontal grid line" ToolTipService.ShowDuration="1000000">
+                                <Label Name="_lblShowHGrid" Grid.Row="7" Content="Show horizontal grid line" ToolTipService.ShowDuration="1000000">
                                     <Label.ToolTip>
-                                        <TextBlock>
+                                        <TextBlock Name="_ttShowHGrid">
                                             Show or hide the horizontal grid line in the Frame Editor control.
                                         </TextBlock>
                                     </Label.ToolTip>
                                 </Label>
-                                <Label Grid.Row="8" Content="Show vertical grid line" ToolTipService.ShowDuration="1000000">
+                                <Label Name="_lblShowVGrid" Grid.Row="8" Content="Show vertical grid line" ToolTipService.ShowDuration="1000000">
                                     <Label.ToolTip>
-                                        <TextBlock>
+                                        <TextBlock Name="_ttShowVGrid">
                                             Show or hide the vertical grid line in the Frame Editor control.
                                         </TextBlock>
                                     </Label.ToolTip>
                                 </Label>
-                                <TextBlock Grid.Row="9" Text="Refresh layer editor while animations are playing" Width="180" Padding="5" TextWrapping="Wrap" HorizontalAlignment="Left">
+                                <TextBlock Name="_tbRefreshLayer" Grid.Row="9" Text="Refresh layer editor while animations are playing" Width="180" Padding="5" TextWrapping="Wrap" HorizontalAlignment="Left">
                                     <TextBlock.ToolTip>
-                                        Disabling this feature will render the animations much faster.
+                                        <TextBlock Name="_ttRefreshLayer">Disabling this feature will render the animations much faster.</TextBlock>
                                     </TextBlock.ToolTip>
                                 </TextBlock>
-                                <TextBlock Grid.Row="10" Text="Use aliasing for the selected layers' border" Width="180" Padding="5" TextWrapping="Wrap" HorizontalAlignment="Left">
+                                <TextBlock Name="_tbUseAliasing" Grid.Row="10" Text="Use aliasing for the selected layers' border" Width="180" Padding="5" TextWrapping="Wrap" HorizontalAlignment="Left">
                                     <TextBlock.ToolTip>
-                                        Turns anti-aliasing on or off for the selection border of the layers.
-                                    </TextBlock.ToolTip>
-                                </TextBlock>
-                                
-                                <TextBlock Grid.Row="11" Text="Use real frame interval instead of being rounded" Width="180" Padding="5" TextWrapping="Wrap" HorizontalAlignment="Left">
-                                    <TextBlock.ToolTip>
-                                        Using an animation speed of 1, the delay between frames is 24ms officially. Act Editor rounds up this number to 25ms for simplicity. Checking this option uses 24ms instead.
+                                        <TextBlock Name="_ttUseAliasing">Turns anti-aliasing on or off for the selection border of the layers.</TextBlock>
                                     </TextBlock.ToolTip>
                                 </TextBlock>
 
-                                <Label Grid.Row="12" Content="Disply encoding" ToolTipService.ShowDuration="1000000">
+                                <TextBlock Name="_tbRealFrameInterval" Grid.Row="11" Text="Use real frame interval instead of being rounded" Width="180" Padding="5" TextWrapping="Wrap" HorizontalAlignment="Left">
+                                    <TextBlock.ToolTip>
+                                        <TextBlock Name="_ttRealFrameInterval">Using an animation speed of 1, the delay between frames is 24ms officially. Act Editor rounds up this number to 25ms for simplicity. Checking this option uses 24ms instead.</TextBlock>
+                                    </TextBlock.ToolTip>
+                                </TextBlock>
+
+                                <Label Name="_lblEncoding" Grid.Row="12" Content="Display encoding" ToolTipService.ShowDuration="1000000">
                                     <Label.ToolTip>
-                                        <TextBlock>
+                                        <TextBlock Name="_ttEncoding">
                                             Changes how the file names are shown when loading a GRF.
                                         </TextBlock>
                                     </Label.ToolTip>
                                 </Label>
-                                
-                                <Label Grid.Row="13" Content="Theme" Visibility="Visible" >
+
+                                <Label Grid.Row="13" Content="Theme" Visibility="Visible" Name="_lblTheme">
                                     <Label.ToolTip>
-                                        <TextBlock>
+                                        <TextBlock Name="_ttTheme">
                                         Determines Act Editor's UI style.
+                                        </TextBlock>
+                                    </Label.ToolTip>
+                                </Label>
+
+                                <Label Grid.Row="14" Content="Language" Visibility="Visible" Name="_lblLanguage">
+                                    <Label.ToolTip>
+                                        <TextBlock Name="_ttLanguage">
+                                        Select the display language for Act Editor.
                                         </TextBlock>
                                     </Label.ToolTip>
                                 </Label>
@@ -105,16 +114,19 @@
                                 <CheckBox Name="_cbAccurateFrameInterval" Grid.Row="11" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
                                 <ComboBox Grid.Row="12" Grid.Column="1" Margin="3" Name="_comboBoxEncoding" IsReadOnly="True" />
-                                
+
                                 <ComboBox Grid.Row="13" Grid.Column="1" Name="_comboBoxStyles" VerticalAlignment="Center" Margin="3" Visibility="Visible" >
+                                </ComboBox>
+
+                                <ComboBox Grid.Row="14" Grid.Column="1" Name="_comboBoxLanguage" VerticalAlignment="Center" Margin="3" Visibility="Visible" >
                                 </ComboBox>
                             </Grid>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Editor colors" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
+                    <TabItem Name="_tabEditorColors" Header="Editor colors" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
                         <StackPanel>
                             <StackPanel>
-                                <Label Content="Editor colors" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
+                                <Label Name="_lblEditorColorsTitle" Content="Editor colors" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
                                 <Rectangle Margin="5 0 5 5" Stroke="#E3E9F1" VerticalAlignment="Stretch" />
                             </StackPanel>
                             <Grid>
@@ -213,10 +225,10 @@
                             </Grid>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Mouse" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
+                    <TabItem Name="_tabMouse" Header="Mouse" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
                         <StackPanel>
                             <StackPanel>
-                                <Label Content="Mouse" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
+                                <Label Name="_lblMouseTitle" Content="Mouse" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
                                 <Rectangle Margin="5 0 5 5" Stroke="#E3E9F1" VerticalAlignment="Stretch" />
                             </StackPanel>
                             <Grid>
@@ -270,10 +282,10 @@
                             </Grid>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Sound" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
+                    <TabItem Name="_tabSound" Header="Sound" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
                         <StackPanel>
                             <StackPanel>
-                                <Label Content="Sound" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
+                                <Label Name="_lblSoundTitle" Content="Sound" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
                                 <Rectangle Margin="5 0 5 5" Stroke="#E3E9F1" VerticalAlignment="Stretch" />
                             </StackPanel>
                             <TextBlock Margin="3" Text="Resource files or folders (drop a GRF or a data folder) : " />
@@ -292,7 +304,7 @@
                             </Grid>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Gif format" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
+                    <TabItem Name="_tabGifFormat" Header="Gif format" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
                         <StackPanel>
                             <StackPanel>
                                 <Label Content="Gif format" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
@@ -378,10 +390,10 @@
                             </Grid>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Shell integration" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
+                    <TabItem Name="_tabShellIntegration" Header="Shell integration" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
                         <StackPanel>
                             <StackPanel>
-                                <Label Content="Shell integration" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
+                                <Label Name="_lblShellIntegrationTitle" Content="Shell integration" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
                                 <Rectangle Margin="5 0 5 5" Stroke="#E3E9F1" VerticalAlignment="Stretch" />
                             </StackPanel>
                             <Grid>
@@ -417,10 +429,10 @@
                             </Grid>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Debugger" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
+                    <TabItem Name="_tabDebugger" Header="Debugger" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
                         <StackPanel>
                             <StackPanel>
-                                <Label Content="Debugger" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
+                                <Label Name="_lblDebuggerTitle" Content="Debugger" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
                                 <Rectangle Margin="5 0 5 5" Stroke="#E3E9F1" VerticalAlignment="Stretch" />
                             </StackPanel>
                             <Grid>
@@ -446,14 +458,14 @@
                             </Grid>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Shortcuts" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
+                    <TabItem Name="_tabShortcuts" Header="Shortcuts" Style="{DynamicResource ResourceKey=TabItemStyled}" Foreground="{StaticResource TextForeground}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto" />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <StackPanel Focusable="True" FocusVisualStyle="{x:Null}">
-                                <Label Content="Shortcuts" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
+                                <Label Name="_lblShortcutsTitle" Content="Shortcuts" FontWeight="Bold" FontSize="16" Margin="3 10 0 5" />
                                 <Rectangle Margin="5 0 5 5" Stroke="#E3E9F1" VerticalAlignment="Stretch" />
                                 <WrapPanel>
                                     <Styles:FancyButton x:Name="_fbResetShortcuts" Click="_fbResetShortcuts_Click" HorizontalAlignment="Left" TextHeader="Reset" TextDescription="Reset all shortcuts" />

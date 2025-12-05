@@ -24,6 +24,7 @@ using Utilities;
 using Utilities.Extension;
 
 namespace ActEditor.Core.Scripts {
+	using L = ApplicationConfiguration.LocalizationManager;
 	public class EditSelectAll : IActScript {
 		#region IActScript Members
 
@@ -36,11 +37,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Select all"; }
+			get { return L.S("Script_SelectAll"); }
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {
@@ -66,11 +67,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Deselect all"; }
+			get { return L.S("Script_DeselectAll"); }
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {
@@ -96,11 +97,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Invert selection"; }
+			get { return L.S("Script_InvertSelection"); }
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {
@@ -126,11 +127,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Bring to front"; }
+			get { return L.S("Script_BringToFront"); }
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {
@@ -156,11 +157,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Bring to back"; }
+			get { return L.S("Script_BringToBack"); }
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {
@@ -188,11 +189,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Edit sound list..."; }
+			get { return L.S("Script_EditSoundList"); }
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {
@@ -286,11 +287,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Quick palette edit..."; }
+			get { return L.S("Script_QuickPaletteEdit"); }
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {
@@ -360,11 +361,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Palette editor..."; }
+			get { return L.S("Script_PaletteEditor"); }
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {
@@ -426,11 +427,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Import palette..."; }
+			get { return L.S("Script_ImportPalette"); }
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {
@@ -452,7 +453,7 @@ namespace ActEditor.Core.Scripts {
 				grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(-1, GridUnitType.Auto) });
 				grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(-1, GridUnitType.Auto) });
 
-				Label label = new Label { Content = "Select background", Padding = new Thickness(0), Margin = new Thickness(0), VerticalAlignment = VerticalAlignment.Center };
+				Label label = new Label { Content = L.S("Script_SelectBackground"), Padding = new Thickness(0), Margin = new Thickness(0), VerticalAlignment = VerticalAlignment.Center };
 				grid.Children.Add(label);
 				label.SetValue(Grid.ColumnProperty, 0);
 
@@ -470,7 +471,7 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {
@@ -506,11 +507,11 @@ namespace ActEditor.Core.Scripts {
 
 	public class EditClearPalette : IActScript {
 		public object DisplayName {
-			get { return "Clear palette"; }
+			get { return L.S("Script_ClearPalette"); }
 		}
 
 		public string Group {
-			get { return "Edit"; }
+			get { return L.S("Group_Edit"); }
 		}
 
 		public string InputGesture {

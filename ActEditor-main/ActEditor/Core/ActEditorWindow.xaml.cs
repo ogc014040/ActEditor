@@ -191,6 +191,64 @@ namespace ActEditor.Core {
 					_miNew_Click(null, null);
 				}
 			};
+
+			// Apply localization
+			ApplyLocalization();
+		}
+
+		/// <summary>
+		/// Applies localization to all UI elements
+		/// </summary>
+		public void ApplyLocalization() {
+			var L = LocalizationManager.S;
+
+			// Main Menu Labels
+			_lblMenuFile.Content = L("Menu_File");
+			_lblMenuEdit.Content = L("Menu_Edit");
+			_lblMenuAnchors.Content = L("Menu_Anchors");
+
+			// File Menu
+			_miNewAct.Header = L("Menu_NewAct");
+			_miNew.HeaderText = L("Menu_NewAct_Default");
+			_miNewHeadgearMale.HeaderText = L("Menu_NewAct_HeadgearMale");
+			_miNewHeadgear.HeaderText = L("Menu_NewAct_HeadgearFemale");
+			_miNewMonster.HeaderText = L("Menu_NewAct_Monster");
+			_miNewHomunculus.HeaderText = L("Menu_NewAct_Homunculus");
+			_miNewWeapon.HeaderText = L("Menu_NewAct_Weapon");
+			_miNewNpc.HeaderText = L("Menu_NewAct_NPC");
+			_miOpen.HeaderText = L("Menu_Open");
+			_miOpenFromGrf.HeaderText = L("Menu_OpenFromGrf");
+			_miOpenRecent.Header = L("Menu_OpenRecent");
+			_miCloseCurrent.HeaderText = L("Menu_CloseAct");
+			_miSelectAct.HeaderText = L("Menu_SelectAct");
+			_miSave.HeaderText = L("Menu_Save");
+			_miSaveAs.HeaderText = L("Menu_SaveAs");
+			_miSaveAsGarment.HeaderText = L("Menu_SaveAsGarment");
+			_miSettings.HeaderText = L("Menu_Settings");
+			_miAbout.HeaderText = L("Menu_About");
+			_miClose.HeaderText = L("Menu_Quit");
+
+			// Edit Menu
+			_miCopy.HeaderText = L("Menu_Copy");
+			_miPaste.HeaderText = L("Menu_Paste");
+			_miCut.HeaderText = L("Menu_Cut");
+			_miView.Header = L("Menu_View");
+			_miViewSameAction.HeaderText = L("Menu_KeepActionSelection");
+			_miViewPrevAnim.HeaderText = L("Menu_ShowAdjacentFrames");
+
+			// Anchors Menu
+			_miShowAnchors.Header = L("Menu_ShowAnchors");
+			_tbUseBodyAsBase.Text = L("Menu_UseBodyAsBase") + "\n" + L("Menu_UseBodyAsBase_Desc");
+			_miAnchor.Header = L("Menu_Anchor");
+			_miAnchor1.HeaderText = L("Menu_Anchor1");
+			_miAnchor2.HeaderText = L("Menu_Anchor2");
+			_miAnchor3.HeaderText = L("Menu_Anchor3");
+			_miAnchor4.HeaderText = L("Menu_Anchor4");
+			_miAnchor5.HeaderText = L("Menu_Anchor5");
+
+			// Undo/Redo
+			_tmbUndo.DisplayFormat = L("Undo_Action");
+			_tmbRedo.DisplayFormat = L("Redo_Action");
 		}
 
 		private void Undo() {

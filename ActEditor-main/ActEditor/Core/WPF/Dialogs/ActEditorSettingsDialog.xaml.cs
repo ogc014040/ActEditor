@@ -34,8 +34,9 @@ namespace ActEditor.Core.WPF.Dialogs {
 			InitializeComponent();
 		}
 
-		public ActEditorSettings(MetaGrfResourcesViewer resource) : base("Settings", "settings.png") {
+		public ActEditorSettings(MetaGrfResourcesViewer resource) : base(LocalizationManager.S("Settings_Title"), "settings.png") {
 			InitializeComponent();
+			ApplyLocalization();
 			ActEditorConfiguration.ConfigAsker.AdvancedSettingEnabled = true;
 
 			_colorPreviewPanelBakground.Color = ActEditorConfiguration.ActEditorBackgroundColor;
@@ -156,7 +157,7 @@ namespace ActEditor.Core.WPF.Dialogs {
 			_comboBoxStyles.Items.Add("Default");
 			_comboBoxStyles.Items.Add("Dark theme");
 
-			if (Directory.Exists(GrfPath.Combine(ActEditorConfiguration.ProgramDataPath, "Themes"))) {	
+			if (Directory.Exists(GrfPath.Combine(ActEditorConfiguration.ProgramDataPath, "Themes"))) {
 				foreach (var file in Directory.GetFiles(GrfPath.Combine(ActEditorConfiguration.ProgramDataPath, "Themes"), "*.xaml")) {
 					_comboBoxStyles.Items.Add(Path.GetFileNameWithoutExtension(file));
 				}
@@ -165,6 +166,24 @@ namespace ActEditor.Core.WPF.Dialogs {
 			var name = ActEditorConfiguration.StyleTheme == "" ? "Default" : (ActEditorConfiguration.StyleTheme == "StyleDark.xaml" ? "Dark theme" : ActEditorConfiguration.StyleTheme);
 
 			_comboBoxStyles.SelectedItem = name;
+
+			// Language selection
+			for (int i = 0; i < LocalizationManager.AvailableLanguages.Length; i++) {
+				_comboBoxLanguage.Items.Add(LocalizationManager.LanguageDisplayNames[i]);
+			}
+
+			int langIndex = Array.IndexOf(LocalizationManager.AvailableLanguages, ActEditorConfiguration.Language);
+			_comboBoxLanguage.SelectedIndex = langIndex >= 0 ? langIndex : 0;
+
+			_comboBoxLanguage.SelectionChanged += delegate {
+				if (_comboBoxLanguage.SelectedIndex < 0 || _comboBoxLanguage.SelectedIndex >= LocalizationManager.AvailableLanguages.Length)
+					return;
+
+				string selectedLang = LocalizationManager.AvailableLanguages[_comboBoxLanguage.SelectedIndex];
+				ActEditorConfiguration.Language = selectedLang;
+				ErrorHandler.HandleException(LocalizationManager.GetString("Msg_RestartRequired"));
+			};
+
 			_comboBoxStyles.SelectionChanged += delegate {
 				if (_comboBoxStyles.SelectedItem == null)
 					return;
@@ -198,6 +217,46 @@ namespace ActEditor.Core.WPF.Dialogs {
 			};
 
 			_loadShortcuts();
+		}
+
+		/// <summary>
+		/// Applies localization to all UI elements in the settings dialog
+		/// </summary>
+		private void ApplyLocalization() {
+			var L = LocalizationManager.S;
+
+			// Tab Headers
+			_tabGeneral.Header = L("Settings_General");
+			_tabEditorColors.Header = L("Settings_EditorColors");
+			_tabMouse.Header = L("Settings_Mouse");
+			_tabSound.Header = L("Settings_Sound");
+			_tabGifFormat.Header = L("Settings_GifFormat");
+			_tabShellIntegration.Header = L("Settings_ShellIntegration");
+			_tabDebugger.Header = L("Settings_Debugger");
+			_tabShortcuts.Header = L("Settings_Shortcuts");
+
+			// Section Titles
+			_lblGeneralTitle.Content = L("Settings_General");
+			_lblEditorColorsTitle.Content = L("Settings_EditorColors");
+			_lblMouseTitle.Content = L("Settings_Mouse");
+			_lblSoundTitle.Content = L("Settings_Sound");
+			_lblShellIntegrationTitle.Content = L("Settings_ShellIntegration");
+			_lblDebuggerTitle.Content = L("Settings_Debugger");
+			_lblShortcutsTitle.Content = L("Settings_Shortcuts");
+
+			// General Tab
+			_lblReopenLatest.Content = L("Settings_ReopenLatestFile");
+			_lblShowHGrid.Content = L("Settings_ShowHorizontalGridLine");
+			_lblShowVGrid.Content = L("Settings_ShowVerticalGridLine");
+			_tbRefreshLayer.Text = L("Settings_RefreshLayerEditor");
+			_tbUseAliasing.Text = L("Settings_UseAliasing");
+			_tbRealFrameInterval.Text = L("Settings_UseRealFrameInterval");
+			_lblEncoding.Content = L("Settings_DisplayEncoding");
+			_lblTheme.Content = L("Settings_Theme");
+			_lblLanguage.Content = L("Settings_Language");
+
+			// Button
+			_buttonOk.Content = L("Button_Ok");
 		}
 
 		private void _set(QuickColorSelector qcs, Func<GrfColor> get, Action<GrfColor> set) {

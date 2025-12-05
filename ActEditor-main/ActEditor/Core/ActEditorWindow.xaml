@@ -73,11 +73,11 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Menu Height="30" Name="_mainMenu">
-            <MenuItem>
+            <MenuItem Name="_miFile">
                 <MenuItem.Header>
-                    <Label Content="File" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-5 0 -5 0" />
+                    <Label Name="_lblMenuFile" Content="File" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-5 0 -5 0" />
                 </MenuItem.Header>
-                <MenuItem Header="New Act" listView:WpfUtils.IconPath="add.png">
+                <MenuItem Name="_miNewAct" Header="New Act" listView:WpfUtils.IconPath="add.png">
                     <Styles:TkMenuItem Name="_miNew" Click="_miNew_Click" HeaderText="Default (empty)" IconPath="internalapp.png" ShortcutCmd="ActEditor.NewFile" Shortcut="Ctrl-N" />
                     <Separator />
                     <Styles:TkMenuItem Name="_miNewHeadgearMale" Click="_miNewHeadgearMale_Click" HeaderText="Headgear (male)" />
@@ -105,13 +105,13 @@
             </MenuItem>
             <MenuItem Name="_miEdit">
                 <MenuItem.Header>
-                    <Label Content="Edit" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-5 0 -5 0" />
+                    <Label Name="_lblMenuEdit" Content="Edit" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-5 0 -5 0" />
                 </MenuItem.Header>
                 <Styles:TkMenuItem Name="_miCopy" Click="_miCopy_Click" HeaderText="Copy" IconPath="copy.png" Shortcut="Ctrl-C"  />
                 <Styles:TkMenuItem Name="_miPaste" Click="_miPaste_Click" HeaderText="Paste" IconPath="paste.png" Shortcut="Ctrl-V"  />
                 <Styles:TkMenuItem Name="_miCut" Click="_miCut_Click" HeaderText="Cut" IconPath="cut.png" Shortcut="Ctrl-X"  />
                 <Separator />
-                <MenuItem Header="View">
+                <MenuItem Name="_miView" Header="View">
                     <Styles:TkMenuItem Name="_miViewSameAction" IsCheckable="True" HeaderText="Keep action selection" IconPath="copy.png" />
                     <Styles:TkMenuItem Name="_miViewPrevAnim" IsCheckable="True" HeaderText="Show the adjacent frames" IconPath="copy.png" Click="_miViewPrevAnim_Click" ShortcutCmd="FrameEditor.ShowAdjascentFrames" Shortcut="Ctrl-Shift-A" />
                 </MenuItem>
@@ -119,12 +119,12 @@
             </MenuItem>
             <MenuItem Name="_miAnchors">
                 <MenuItem.Header>
-                    <Label Content="Anchors" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-5 0 -5 0" />
+                    <Label Name="_lblMenuAnchors" Content="Anchors" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-5 0 -5 0" />
                 </MenuItem.Header>
                 <MenuItem Name="_miShowAnchors" Header="Show anchors" IsCheckable="True" Checked="_miShowAnchors_Checked" Unchecked="_miShowAnchors_Unchecked" Loaded="_miShowAnchors_Loaded" />
                 <MenuItem Name="_miReverseAnchors" IsCheckable="True">
                     <MenuItem.Header>
-                        <TextBlock>
+                        <TextBlock Name="_tbUseBodyAsBase">
                         Use body as base<LineBreak/>
                         - Unchecked for headgears<LineBreak/>
                         - Checked for garments/wings
@@ -133,11 +133,11 @@
                 </MenuItem>
                 <Separator />
                 <MenuItem x:Name="_miAnchor" Header="Anchor">
-                    <Styles:TkMenuItem Checked="_miAnchor_Click" Click="_miAnchor_Click" Tag="0" HeaderText="Anchor 1" ShortcutCmd="FrameEditor.ShowAnchor1" Shortcut="Ctrl-1" IsCheckable="True" />
-                    <Styles:TkMenuItem Checked="_miAnchor_Click" Click="_miAnchor_Click" Tag="1" HeaderText="Anchor 2" ShortcutCmd="FrameEditor.ShowAnchor2" Shortcut="Ctrl-2" IsCheckable="True"  />
-                    <Styles:TkMenuItem Checked="_miAnchor_Click" Click="_miAnchor_Click" Tag="2" HeaderText="Anchor 3" ShortcutCmd="FrameEditor.ShowAnchor3" Shortcut="Ctrl-3" IsCheckable="True"  />
-                    <Styles:TkMenuItem Checked="_miAnchor_Click" Click="_miAnchor_Click" Tag="3" HeaderText="Anchor 4" ShortcutCmd="FrameEditor.ShowAnchor4" Shortcut="Ctrl-4" IsCheckable="True"  />
-                    <Styles:TkMenuItem Checked="_miAnchor_Click" Click="_miAnchor_Click" Tag="4" HeaderText="Anchor 5" ShortcutCmd="FrameEditor.ShowAnchor5" Shortcut="Ctrl-5" IsCheckable="True"  />
+                    <Styles:TkMenuItem Name="_miAnchor1" Checked="_miAnchor_Click" Click="_miAnchor_Click" Tag="0" HeaderText="Anchor 1" ShortcutCmd="FrameEditor.ShowAnchor1" Shortcut="Ctrl-1" IsCheckable="True" />
+                    <Styles:TkMenuItem Name="_miAnchor2" Checked="_miAnchor_Click" Click="_miAnchor_Click" Tag="1" HeaderText="Anchor 2" ShortcutCmd="FrameEditor.ShowAnchor2" Shortcut="Ctrl-2" IsCheckable="True"  />
+                    <Styles:TkMenuItem Name="_miAnchor3" Checked="_miAnchor_Click" Click="_miAnchor_Click" Tag="2" HeaderText="Anchor 3" ShortcutCmd="FrameEditor.ShowAnchor3" Shortcut="Ctrl-3" IsCheckable="True"  />
+                    <Styles:TkMenuItem Name="_miAnchor4" Checked="_miAnchor_Click" Click="_miAnchor_Click" Tag="3" HeaderText="Anchor 4" ShortcutCmd="FrameEditor.ShowAnchor4" Shortcut="Ctrl-4" IsCheckable="True"  />
+                    <Styles:TkMenuItem Name="_miAnchor5" Checked="_miAnchor_Click" Click="_miAnchor_Click" Tag="4" HeaderText="Anchor 5" ShortcutCmd="FrameEditor.ShowAnchor5" Shortcut="Ctrl-5" IsCheckable="True"  />
                 </MenuItem>
             </MenuItem>
         </Menu>

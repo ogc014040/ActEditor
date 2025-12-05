@@ -29,6 +29,10 @@ namespace ActEditor {
 			SelfPatcher.SelfPatch();
 			Spr.AutomaticDowngradeOnRleException = true;
 			Configuration.ProgramDataPath = GrfPath.Combine(Configuration.ApplicationDataPath, ActEditorConfiguration.ProgramName);
+
+			// Initialize localization system with saved language setting
+			LocalizationManager.Initialize(ActEditorConfiguration.Language);
+
 			EffectConfiguration.ConfigAsker = ActEditorConfiguration.ConfigAsker;
 			EffectConfiguration.DisplayAction = (effectConfig, act, actionIndex) => {
 				EffectPreviewDialog effectDialog = new EffectPreviewDialog(act, actionIndex, effectConfig);

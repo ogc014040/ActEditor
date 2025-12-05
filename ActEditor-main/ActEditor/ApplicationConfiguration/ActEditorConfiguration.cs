@@ -595,6 +595,18 @@ namespace ActEditor.ApplicationConfiguration {
 			set { ConfigAsker["[ActEditor - StyleTheme]"] = value; }
 		}
 
+		/// <summary>
+		/// Gets or sets the UI language.
+		/// Supported values: "en-US" (English), "zh-TW" (Traditional Chinese)
+		/// </summary>
+		public static string Language {
+			get { return ConfigAsker["[ActEditor - Language]", "en-US"]; }
+			set {
+				ConfigAsker["[ActEditor - Language]"] = value;
+				LocalizationManager.CurrentLanguage = value;
+			}
+		}
+
 		#endregion
 
 		#region Property binders
