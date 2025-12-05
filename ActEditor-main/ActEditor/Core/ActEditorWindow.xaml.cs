@@ -200,10 +200,14 @@ namespace ActEditor.Core {
 		/// Applies localization to all UI elements
 		/// </summary>
 		public void ApplyLocalization() {
-			// Main Menu Labels
+			// Main Menu Labels (XAML-defined)
 			_lblMenuFile.Content = LocalizationManager.S("Menu_File");
 			_lblMenuEdit.Content = LocalizationManager.S("Menu_Edit");
 			_lblMenuAnchors.Content = LocalizationManager.S("Menu_Anchors");
+
+			// Update dynamically created menus (Action, Frame, Animation, Effects, Scripts)
+			// These are created by ScriptLoader and their headers need to be updated on language change
+			UpdateDynamicMenuHeaders();
 
 			// File Menu
 			_miNewAct.Header = LocalizationManager.S("Menu_NewAct");
@@ -249,6 +253,48 @@ namespace ActEditor.Core {
 			_tmbRedo.DisplayFormat = LocalizationManager.S("Redo_Action");
 		}
 
+		/// <summary>
+		/// Updates dynamically created menu headers when language changes.
+		/// This handles menus created by ScriptLoader (Action, Frame, Animation, Effects, Scripts).
+		/// </summary>
+		private void UpdateDynamicMenuHeaders() {
+			// Map of all possible group names (both English and Chinese) to their localization keys
+			var groupKeyMap = new Dictionary<string, string> {
+				// English names
+				{"Action", "Group_Action"},
+				{"Frame", "Group_Frame"},
+				{"Animation", "Group_Animation"},
+				{"Effects", "Group_Effects"},
+				{"Script", "Group_Script"},
+				{"Scripts", "Group_Scripts"},
+				// Chinese names
+				{"動作", "Group_Action"},
+				{"幀", "Group_Frame"},
+				{"動畫", "Group_Animation"},
+				{"效果", "Group_Effects"},
+				{"腳本", "Group_Scripts"},
+			};
+
+			foreach (MenuItem menuItem in _mainMenu.Items) {
+				// Skip XAML-defined menus (File, Edit, Anchors) - they are handled directly
+				if (menuItem == _miFile || menuItem == _miEdit || menuItem == _miAnchors)
+					continue;
+
+				// Get the current header text
+				string currentHeader = null;
+				Label headerLabel = menuItem.Header as Label;
+				if (headerLabel != null) {
+					currentHeader = headerLabel.Content as string;
+				}
+
+				if (currentHeader != null && groupKeyMap.ContainsKey(currentHeader)) {
+					// Update to the new locale's translation
+					string key = groupKeyMap[currentHeader];
+					headerLabel.Content = LocalizationManager.S(key);
+				}
+			}
+		}
+
 		private void Undo() {
 			_tabEngine.Undo();
 		}
@@ -289,7 +335,7 @@ namespace ActEditor.Core {
 
 			_scriptLoader.AddScriptsToMenu(new EditAnchor(), this, _mainMenu, null);
 			((MenuItem)_mainMenu.Items[2]).Items.Add(new Separator());
-			((MenuItem)_mainMenu.Items[2]).Items.Add(new TkMenuItem { Header = "Set anchors", IconPath = "forward.png" });
+			((MenuItem)_mainMenu.Items[2]).Items.Add(new TkMenuItem { Header = LocalizationManager.S("Script_SetAnchors"), IconPath = "forward.png" });
 			_scriptLoader.AddScriptsToMenu(new ImportAnchor(), this, _mainMenu, null);
 			_scriptLoader.AddScriptsToMenu(new ImportDefaultMaleAnchor(), this, _mainMenu, null);
 			_scriptLoader.AddScriptsToMenu(new ImportDefaultFemaleAnchor(), this, _mainMenu, null);
