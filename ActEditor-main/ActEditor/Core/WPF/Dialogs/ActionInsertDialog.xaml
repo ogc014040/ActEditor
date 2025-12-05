@@ -20,12 +20,12 @@
             <Grid Grid.Row="0">
                 <StackPanel>
                     <DockPanel LastChildFill="False">
-                        <Label Padding="0" Content="Edit mode : " Grid.Row="0" Margin="3" />
-                        <RadioButton Name="_mode0" Checked="_mode_Checked" Content="Delete" Grid.Row="1" Margin="3 3 20 3" />
-                        <RadioButton Name="_mode4" Checked="_mode_Checked" Content="Copy to" Grid.Row="4" Margin="3 3 20 3" />
-                        <RadioButton Name="_mode1" Checked="_mode_Checked" Content="Insert to" Grid.Row="2" Margin="3 3 20 3" />
-                        <RadioButton Name="_mode2" Checked="_mode_Checked" Content="Move to" Grid.Row="3" Margin="3 3 20 3" />
-                        <RadioButton Name="_mode3" Checked="_mode_Checked" Content="Switch to" Grid.Row="3" Margin="3 3 20 3" />
+                        <Label x:Name="_lblEditMode" Padding="0" Content="Edit mode : " Grid.Row="0" Margin="3" />
+                        <RadioButton x:Name="_mode0" Checked="_mode_Checked" Content="Delete" Grid.Row="1" Margin="3 3 20 3" />
+                        <RadioButton x:Name="_mode4" Checked="_mode_Checked" Content="Copy to" Grid.Row="4" Margin="3 3 20 3" />
+                        <RadioButton x:Name="_mode1" Checked="_mode_Checked" Content="Insert to" Grid.Row="2" Margin="3 3 20 3" />
+                        <RadioButton x:Name="_mode2" Checked="_mode_Checked" Content="Move to" Grid.Row="3" Margin="3 3 20 3" />
+                        <RadioButton x:Name="_mode3" Checked="_mode_Checked" Content="Switch to" Grid.Row="3" Margin="3 3 20 3" />
                     </DockPanel>
                 </StackPanel>
             </Grid>
@@ -44,22 +44,22 @@
                     <ColumnDefinition Width="130" />
                     <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
-                <Label Name="_labelStartIndex" Content="Start index" VerticalAlignment="Center" Grid.Row="0" />
+                <Label x:Name="_labelStartIndex" Content="Start index" VerticalAlignment="Center" Grid.Row="0" />
                 <Grid Grid.Row="1" Grid.ColumnSpan="3" Background="{StaticResource UIThemeScriptRunnerConsoleErrorBrush}" />
-                <Label Name="_labelRange" Content="Count" Grid.Row="1" />
-                <Grid Grid.Row="2" Name="_gridEndIndex">
+                <Label x:Name="_labelRange" Content="Count" Grid.Row="1" />
+                <Grid Grid.Row="2" x:Name="_gridEndIndex">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                    <Label Content="Destination index" Grid.Row="2" VerticalAlignment="Center" />
+                    <Label x:Name="_lblDestinationIndex" Content="Destination index" Grid.Row="2" VerticalAlignment="Center" />
                     <Styles:FancyButton x:Name="_lastIndex" Click="_lastIndex_Click" ImagePath="arrowdown.png" Height="22" Width="22" Grid.Column="1" Margin="2">
                         <Styles:FancyButton.ToolTip>
                             Set to last index
                         </Styles:FancyButton.ToolTip>
                     </Styles:FancyButton>
                 </Grid>
-                <CheckBox Name="_cbCopyContent" Content="Copy from currently selected" Grid.Row="3" Grid.ColumnSpan="3" Margin="3" />
+                <CheckBox x:Name="_cbCopyContent" Content="Copy from currently selected" Grid.Row="3" Grid.ColumnSpan="3" Margin="3" />
 
                 <Border Grid.Column="1" Margin="3" BorderBrush="Transparent" Name="_borderIndexStart" BorderThickness="1" VerticalAlignment="Center" CornerRadius="1" >
                     <GenericControls:ClickSelectTextBox TextAlignment="Right" BorderThickness="0" x:Name="_tbIndexStart" VerticalAlignment="Center"  />
@@ -82,8 +82,8 @@
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <DockPanel HorizontalAlignment="Right" Margin="0 0 3 0" Grid.Column="1">
-                <Button Name="_buttonOk" Click="_buttonOk_Click" Content="Ok" Height="24" Margin="3" MinWidth="100" />
-                <Button Name="_buttonCancel" Click="_buttonCancel_Click" Content="Cancel" Height="24" Margin="3" MinWidth="100" />
+                <Button x:Name="_buttonOk" Click="_buttonOk_Click" Content="Ok" Height="24" Margin="3" MinWidth="100" />
+                <Button x:Name="_buttonCancel" Click="_buttonCancel_Click" Content="Cancel" Height="24" Margin="3" MinWidth="100" />
             </DockPanel>
         </Grid>
     </Grid>

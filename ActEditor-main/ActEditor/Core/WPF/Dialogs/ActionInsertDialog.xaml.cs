@@ -33,6 +33,7 @@ namespace ActEditor.Core.WPF.Dialogs {
 
 		public ActionInsertDialog() : base("Action edit", "advanced.png") {
 			InitializeComponent();
+			ApplyLocalization();
 
 			WpfUtilities.AddFocus(_tbIndexStart, _tbIndexEnd, _tbIndexRange);
 
@@ -486,6 +487,23 @@ namespace ActEditor.Core.WPF.Dialogs {
 
 		private void _lastIndex_Click(object sender, RoutedEventArgs e) {
 			EndIndex = _act.NumberOfActions;
+		}
+
+		private void ApplyLocalization() {
+			Title = LocalizationManager.S("Dialog_ActionInsert");
+			_lblEditMode.Content = LocalizationManager.S("Insert_EditMode");
+			_mode0.Content = LocalizationManager.S("Insert_Delete");
+			_mode4.Content = LocalizationManager.S("Insert_CopyTo");
+			_mode1.Content = LocalizationManager.S("Insert_InsertTo");
+			_mode2.Content = LocalizationManager.S("Insert_MoveTo");
+			_mode3.Content = LocalizationManager.S("Insert_SwitchTo");
+			_labelStartIndex.Content = LocalizationManager.S("Insert_StartIndex");
+			_labelRange.Content = LocalizationManager.S("Insert_Count");
+			_lblDestinationIndex.Content = LocalizationManager.S("Insert_DestinationIndex");
+			_lastIndex.ToolTip = LocalizationManager.S("Insert_SetToLastIndex");
+			_cbCopyContent.Content = LocalizationManager.S("Insert_CopyFromCurrentlySelected");
+			_buttonOk.Content = LocalizationManager.S("Button_Ok");
+			_buttonCancel.Content = LocalizationManager.S("Button_Cancel");
 		}
 	}
 }
