@@ -7,6 +7,7 @@ using GRF.FileFormats.ActFormat;
 using GRF.IO;
 using TokeiLibrary;
 using Utilities.Services;
+using L = ActEditor.ApplicationConfiguration.LocalizationManager;
 
 namespace ActEditor.Core.Scripts {
 	public class ScriptRunnerMenu : IActScript {
@@ -34,11 +35,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Script Runner..."; }
+			get { return L.S("Script_ScriptRunner"); }
 		}
 
 		public string Group {
-			get { return "Scripts"; }
+			get { return L.S("Group_Scripts"); }
 		}
 
 		public string InputGesture {
@@ -74,11 +75,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Open scripts folder"; }
+			get { return L.S("Script_OpenScriptsFolder"); }
 		}
 
 		public string Group {
-			get { return "Scripts"; }
+			get { return L.S("Group_Scripts"); }
 		}
 
 		public string InputGesture {
@@ -111,11 +112,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Reload scripts"; }
+			get { return L.S("Script_ReloadScripts"); }
 		}
 
 		public string Group {
-			get { return "Scripts"; }
+			get { return L.S("Group_Scripts"); }
 		}
 
 		public string InputGesture {
@@ -155,11 +156,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Batch script..."; }
+			get { return L.S("Script_BatchScript"); }
 		}
 
 		public string Group {
-			get { return "Scripts"; }
+			get { return L.S("Group_Scripts"); }
 		}
 
 		public string InputGesture {

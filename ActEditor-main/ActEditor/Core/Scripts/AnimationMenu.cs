@@ -13,26 +13,18 @@ using GRF.Image;
 using TokeiLibrary;
 using TokeiLibrary.WPF;
 using Frame = GRF.FileFormats.ActFormat.Frame;
+using L = ActEditor.ApplicationConfiguration.LocalizationManager;
 
 namespace ActEditor.Core.Scripts {
 	public class FrameCopyBBr : IActScript {
 		#region IActScript Members
 
 		public object DisplayName {
-			get {
-				TextBlock txt = new TextBlock();
-
-				txt.Inlines.Add("Rotation copy from ");
-				txt.Inlines.Add(new Bold(new Run("bottom")));
-				txt.Inlines.Add(" to ");
-				txt.Inlines.Add(new Bold(new Run("bottom right")));
-
-				return txt;
-			}
+			get { return L.S("Script_RotationCopyBottomToBottomRight"); }
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public string InputGesture {
@@ -80,21 +72,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get {
-				TextBlock txt = new TextBlock();
-
-				txt.Inlines.Add("Rotation copy from ");
-				txt.Inlines.Add(new Bold(new Run("bottom right")));
-				txt.Inlines.Add(" to ");
-				txt.Inlines.Add(new Bold(new Run("bottom")));
-				txt.Inlines.Add(" (common)");
-
-				return txt;
-			}
+			get { return L.S("Script_RotationCopyBottomRightToBottom"); }
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public string InputGesture {
@@ -142,20 +124,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get {
-				TextBlock txt = new TextBlock();
-
-				txt.Inlines.Add("Rotation copy from ");
-				txt.Inlines.Add(new Bold(new Run("bottom left")));
-				txt.Inlines.Add(" to ");
-				txt.Inlines.Add(new Bold(new Run("bottom")));
-
-				return txt;
-			}
+			get { return L.S("Script_RotationCopyBottomLeftToBottom"); }
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public string InputGesture {
@@ -201,17 +174,7 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get {
-				TextBlock txt = new TextBlock();
-
-				txt.Inlines.Add("Rotation copy from ");
-				txt.Inlines.Add(new Bold(new Run("bottom")));
-				txt.Inlines.Add(" to ");
-				txt.Inlines.Add(new Bold(new Run("bottom left")));
-				txt.Inlines.Add(" (common)");
-
-				return txt;
-			}
+			get { return L.S("Script_RotationCopyBottomToBottomLeft"); }
 		}
 
 		public string InputGesture {
@@ -223,7 +186,7 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public void Execute(Act act, int selectedActionIndex, int selectedFrameIndex, int[] selectedLayerIndexes) {
@@ -264,7 +227,7 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Setup Headgear..."; }
+			get { return L.S("Script_SetupHeadgear"); }
 		}
 
 		public string InputGesture {
@@ -276,7 +239,7 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public FrameCopyHead(ActEditorWindow editor) {
@@ -312,7 +275,7 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Setup Head..."; }
+			get { return L.S("Script_SetupHead"); }
 		}
 
 		public string InputGesture {
@@ -324,7 +287,7 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public FrameCopyHead2(ActEditorWindow editor) {
@@ -359,7 +322,7 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Setup Garment..."; }
+			get { return L.S("Script_SetupGarment"); }
 		}
 
 		public string InputGesture {
@@ -371,7 +334,7 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public FrameCopyGarment(ActEditorWindow editor) {
@@ -425,11 +388,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Reverse animation"; }
+			get { return L.S("Script_ReverseAnimation"); }
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public string InputGesture {
@@ -554,18 +517,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get {
-				TextBlock txt = new TextBlock();
-
-				txt.Inlines.Add(new Bold(new Run("Interpolate")));
-				txt.Inlines.Add(" frames");
-
-				return txt;
-			}
+			get { return L.S("Script_InterpolateFrames"); }
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public string InputGesture {
@@ -761,18 +717,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get {
-				TextBlock txt = new TextBlock();
-
-				txt.Inlines.Add(new Bold(new Run("Interpolate")));
-				txt.Inlines.Add(" selected layers");
-
-				return txt;
-			}
+			get { return L.S("Script_InterpolateSelectedLayers"); }
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public string InputGesture {
@@ -811,11 +760,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Advanced interpolation"; }
+			get { return L.S("Script_AdvancedInterpolation"); }
 		}
 
 		public string Group {
-			get { return "Animation"; }
+			get { return L.S("Group_Animation"); }
 		}
 
 		public string InputGesture {

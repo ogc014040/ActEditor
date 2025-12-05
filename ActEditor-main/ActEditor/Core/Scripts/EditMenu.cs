@@ -22,9 +22,9 @@ using TokeiLibrary;
 using TokeiLibrary.Paths;
 using Utilities;
 using Utilities.Extension;
+using L = ActEditor.ApplicationConfiguration.LocalizationManager;
 
 namespace ActEditor.Core.Scripts {
-	using L = ApplicationConfiguration.LocalizationManager;
 	public class EditSelectAll : IActScript {
 		#region IActScript Members
 

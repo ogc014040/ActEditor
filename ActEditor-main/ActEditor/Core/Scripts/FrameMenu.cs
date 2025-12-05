@@ -13,17 +13,18 @@ using GRF.Image;
 using GrfToWpfBridge;
 using TokeiLibrary;
 using TokeiLibrary.WPF;
+using L = ActEditor.ApplicationConfiguration.LocalizationManager;
 
 namespace ActEditor.Core.Scripts {
 	public class FrameDelete : IActScript {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Delete frame"; }
+			get { return L.S("Script_DeleteFrame"); }
 		}
 
 		public string Group {
-			get { return "Frame"; }
+			get { return L.S("Group_Frame"); }
 		}
 
 		public string InputGesture {
@@ -54,11 +55,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Add frame to..."; }
+			get { return L.S("Script_AddFrameTo"); }
 		}
 
 		public string Group {
-			get { return "Frame"; }
+			get { return L.S("Group_Frame"); }
 		}
 
 		public string InputGesture {
@@ -99,11 +100,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Switch frame to..."; }
+			get { return L.S("Script_SwitchFrameTo"); }
 		}
 
 		public string Group {
-			get { return "Frame"; }
+			get { return L.S("Group_Frame"); }
 		}
 
 		public string InputGesture {
@@ -144,11 +145,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Copy frame and replace to..."; }
+			get { return L.S("Script_CopyFrameReplace"); }
 		}
 
 		public string Group {
-			get { return "Frame"; }
+			get { return L.S("Group_Frame"); }
 		}
 
 		public string InputGesture {
@@ -189,11 +190,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Advanced edit..."; }
+			get { return L.S("Script_AdvancedEdit"); }
 		}
 
 		public string Group {
-			get { return "Frame"; }
+			get { return L.S("Group_Frame"); }
 		}
 
 		public string InputGesture {
@@ -234,11 +235,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Duplicate frames..."; }
+			get { return L.S("Script_DuplicateFrames"); }
 		}
 
 		public string Group {
-			get { return "Frame"; }
+			get { return L.S("Group_Frame"); }
 		}
 
 		public string InputGesture {
@@ -301,11 +302,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Add sprite to all frames..."; }
+			get { return L.S("Script_AddSpriteToAllFrames"); }
 		}
 
 		public string Group {
-			get { return "Frame"; }
+			get { return L.S("Group_Frame"); }
 		}
 
 		public string InputGesture {
@@ -419,8 +420,8 @@ namespace ActEditor.Core.Scripts {
 			return box;
 		}
 
-		public static UIElement GenerateCheckBox(string display = "Copy from the currently selected frame") {
-			var checkBox = new CheckBox {Content = "Copy from the currently selected frame"};
+		public static UIElement GenerateCheckBox(string display = null) {
+			var checkBox = new CheckBox {Content = display ?? L.S("Frame_CopyFromCurrentFrame")};
 			Binder.Bind(checkBox, () => ActEditorConfiguration.ActEditorCopyFromCurrentFrame, v => ActEditorConfiguration.ActEditorCopyFromCurrentFrame = v);
 			checkBox.HorizontalAlignment = HorizontalAlignment.Left;
 			checkBox.VerticalAlignment = VerticalAlignment.Center;

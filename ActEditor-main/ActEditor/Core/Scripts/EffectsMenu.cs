@@ -7,6 +7,7 @@ using GRF.Graphics;
 using GRF.Image;
 using Utilities.IndexProviders;
 using Action = GRF.FileFormats.ActFormat.Action;
+using L = ActEditor.ApplicationConfiguration.LocalizationManager;
 
 namespace ActEditor.Core.Scripts {
 	public class EffectFadeAnimation : IActScript {
@@ -57,11 +58,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Generate fade animation"; }
+			get { return L.S("Script_GenerateFade"); }
 		}
 
 		public string Group {
-			get { return "Effects"; }
+			get { return L.S("Group_Effects"); }
 		}
 
 		public string InputGesture {
@@ -147,11 +148,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Generate receiving damage animation"; }
+			get { return L.S("Script_GenerateDamage"); }
 		}
 
 		public string Group {
-			get { return "Effects"; }
+			get { return L.S("Group_Effects"); }
 		}
 
 		public string InputGesture {
@@ -211,11 +212,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Stroke silouhette [Palooza]"; }
+			get { return L.S("Script_StrokeSilhouette"); }
 		}
 
 		public string Group {
-			get { return "Effects"; }
+			get { return L.S("Group_Effects"); }
 		}
 
 		public string InputGesture {
@@ -286,11 +287,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Breathing [Palooza]"; }
+			get { return L.S("Script_Breathing"); }
 		}
 
 		public string Group {
-			get { return "Effects"; }
+			get { return L.S("Group_Effects"); }
 		}
 
 		public string InputGesture {

@@ -9,6 +9,7 @@ using GrfToWpfBridge;
 using TokeiLibrary;
 using TokeiLibrary.Paths;
 using Utilities.Services;
+using L = ActEditor.ApplicationConfiguration.LocalizationManager;
 
 namespace ActEditor.Core.Scripts {
 	public class SpriteExportNormal : IActScript {
@@ -21,11 +22,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "__IndexOverride,12__%Export all sprites..."; }
+			get { return "__IndexOverride,12__%" + L.S("Script_ExportAllSprites"); }
 		}
 
 		public string Group {
-			get { return "File"; }
+			get { return L.S("Group_File"); }
 		}
 
 		public string InputGesture {
@@ -88,11 +89,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "__IndexOverride,13__%Export all sprites (adv)..."; }
+			get { return "__IndexOverride,13__%" + L.S("Script_ExportAllSpritesAdv"); }
 		}
 
 		public string Group {
-			get { return "File"; }
+			get { return L.S("Group_File"); }
 		}
 
 		public string InputGesture {

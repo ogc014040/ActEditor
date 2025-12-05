@@ -13,17 +13,18 @@ using TokeiLibrary;
 using Utilities.Extension;
 using Action = GRF.FileFormats.ActFormat.Action;
 using Frame = GRF.FileFormats.ActFormat.Frame;
+using L = ActEditor.ApplicationConfiguration.LocalizationManager;
 
 namespace ActEditor.Core.Scripts {
 	public class ActionCopy : IActScript {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Copy action"; }
+			get { return L.S("Script_CopyAction"); }
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public string InputGesture {
@@ -51,11 +52,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Paste action"; }
+			get { return L.S("Script_PasteAction"); }
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public string InputGesture {
@@ -106,11 +107,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Delete action"; }
+			get { return L.S("Script_DeleteAction"); }
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public string InputGesture {
@@ -143,11 +144,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Add action to..."; }
+			get { return L.S("Script_AddActionTo"); }
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public string InputGesture {
@@ -188,11 +189,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Switch action to..."; }
+			get { return L.S("Script_SwitchActionTo"); }
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public string InputGesture {
@@ -238,11 +239,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Copy action and replace to..."; }
+			get { return L.S("Script_CopyActionReplace"); }
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public string InputGesture {
@@ -288,11 +289,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Advanced edit..."; }
+			get { return L.S("Script_AdvancedEdit"); }
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public string InputGesture {
@@ -332,16 +333,7 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get {
-				TextBlock txt = new TextBlock();
-
-				txt.Inlines.Add("Mirror action from\r\n");
-				txt.Inlines.Add(new Bold(new Run("left/right")));
-				txt.Inlines.Add(" to ");
-				txt.Inlines.Add(new Bold(new Run("right/left")));
-
-				return txt;
-			}
+			get { return L.S("Script_MirrorActionLeftRight"); }
 		}
 
 		public string InputGesture {
@@ -353,7 +345,7 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public void Execute(Act act, int selectedActionIndex, int selectedFrameIndex, int[] selectedLayerIndexes) {
@@ -444,7 +436,7 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return _dir == MoveDirection.Up ? "Move layers to back" : "Move layers to front"; }
+			get { return _dir == MoveDirection.Up ? L.S("Script_MoveLayersToBack") : L.S("Script_MoveLayersToFront"); }
 		}
 
 		public string InputGesture {
@@ -456,7 +448,7 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public ActionLayerMove(MoveDirection dir, IFrameRendererEditor editor) {
@@ -556,11 +548,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Mirror vertical"; }
+			get { return L.S("Script_MirrorVertical"); }
 		}
 
 		public string Group {
-			get { return "Frame"; }
+			get { return L.S("Group_Frame"); }
 		}
 
 		public string InputGesture {
@@ -596,11 +588,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Mirror horizontal"; }
+			get { return L.S("Script_MirrorHorizontal"); }
 		}
 
 		public string Group {
-			get { return "Frame"; }
+			get { return L.S("Group_Frame"); }
 		}
 
 		public string InputGesture {
@@ -636,11 +628,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Mirror vertical"; }
+			get { return L.S("Script_MirrorVertical"); }
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public string InputGesture {
@@ -676,11 +668,11 @@ namespace ActEditor.Core.Scripts {
 		#region IActScript Members
 
 		public object DisplayName {
-			get { return "Mirror horizontal"; }
+			get { return L.S("Script_MirrorHorizontal"); }
 		}
 
 		public string Group {
-			get { return "Action"; }
+			get { return L.S("Group_Action"); }
 		}
 
 		public string InputGesture {

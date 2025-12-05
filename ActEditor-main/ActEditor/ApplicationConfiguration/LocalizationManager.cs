@@ -264,6 +264,9 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Script_DeleteAction"] = "Delete action";
 			_strings["Script_SwitchActionTo"] = "Switch action to...";
 			_strings["Script_EditFrameAnchor"] = "Edit frame anchor position";
+			_strings["Script_MirrorActionLeftRight"] = "Mirror action from\nleft/right to right/left";
+			_strings["Script_MoveLayersToBack"] = "Move layers to back";
+			_strings["Script_MoveLayersToFront"] = "Move layers to front";
 
 			// Script Menu - Frame
 			_strings["Script_AddFrameTo"] = "Add frame to...";
@@ -290,6 +293,13 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Script_GenerateDamage"] = "Generate receiving damage animation";
 			_strings["Script_Breathing"] = "Breathing [Palooza]";
 			_strings["Script_StrokeSilhouette"] = "Stroke silhouette [Palooza]";
+			_strings["Script_RotationCopyBottomToBottomRight"] = "Rotation copy from\nbottom to bottom right";
+			_strings["Script_RotationCopyBottomRightToBottom"] = "Rotation copy from\nbottom right to bottom (common)";
+			_strings["Script_RotationCopyBottomLeftToBottom"] = "Rotation copy from\nbottom left to bottom";
+			_strings["Script_RotationCopyBottomToBottomLeft"] = "Rotation copy from\nbottom to bottom left (common)";
+			_strings["Script_InterpolateFrames"] = "Interpolate frames";
+			_strings["Script_InterpolateSelectedLayers"] = "Interpolate selected layers";
+			_strings["Script_AdvancedInterpolation"] = "Advanced interpolation";
 
 			// Script Menu - Effects
 			_strings["Script_AdjustFromFile"] = "Adjust from file...";
@@ -312,10 +322,17 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Group_Action"] = "Action";
 			_strings["Group_Frame"] = "Frame";
 			_strings["Group_Anchor"] = "Anchor";
+			_strings["Group_Anchors"] = "Anchors";
+			_strings["Group_AnchorsSetAnchors"] = "Anchors/Set anchors";
+			_strings["Group_AnchorsAdjustAnchors"] = "Anchors/Adjust anchors";
 			_strings["Group_Animation"] = "Animation";
 			_strings["Group_Effects"] = "Effects";
 			_strings["Group_Script"] = "Script";
+			_strings["Group_Scripts"] = "Scripts";
 			_strings["Group_File"] = "File";
+
+			// Frame helper
+			_strings["Frame_CopyFromCurrentFrame"] = "Copy from the currently selected frame";
 
 			// Dialogs
 			_strings["Dialog_ActionInsert"] = "Action insert";
@@ -584,6 +601,9 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Script_DeleteAction"] = "刪除動作";
 			_strings["Script_SwitchActionTo"] = "切換動作至...";
 			_strings["Script_EditFrameAnchor"] = "編輯幀錨點位置";
+			_strings["Script_MirrorActionLeftRight"] = "從左/右鏡射動作\n至右/左";
+			_strings["Script_MoveLayersToBack"] = "將圖層移至後方";
+			_strings["Script_MoveLayersToFront"] = "將圖層移至前方";
 
 			// Script Menu - Frame
 			_strings["Script_AddFrameTo"] = "新增幀至...";
@@ -610,6 +630,13 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Script_GenerateDamage"] = "產生受擊動畫";
 			_strings["Script_Breathing"] = "呼吸效果 [Palooza]";
 			_strings["Script_StrokeSilhouette"] = "描邊輪廓 [Palooza]";
+			_strings["Script_RotationCopyBottomToBottomRight"] = "旋轉複製從\n下方至右下方";
+			_strings["Script_RotationCopyBottomRightToBottom"] = "旋轉複製從\n右下方至下方（常用）";
+			_strings["Script_RotationCopyBottomLeftToBottom"] = "旋轉複製從\n左下方至下方";
+			_strings["Script_RotationCopyBottomToBottomLeft"] = "旋轉複製從\n下方至左下方（常用）";
+			_strings["Script_InterpolateFrames"] = "內插幀";
+			_strings["Script_InterpolateSelectedLayers"] = "內插選取的圖層";
+			_strings["Script_AdvancedInterpolation"] = "進階內插";
 
 			// Script Menu - Effects
 			_strings["Script_AdjustFromFile"] = "從檔案調整...";
@@ -632,10 +659,17 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Group_Action"] = "動作";
 			_strings["Group_Frame"] = "幀";
 			_strings["Group_Anchor"] = "錨點";
+			_strings["Group_Anchors"] = "錨點";
+			_strings["Group_AnchorsSetAnchors"] = "錨點/設定錨點";
+			_strings["Group_AnchorsAdjustAnchors"] = "錨點/調整錨點";
 			_strings["Group_Animation"] = "動畫";
 			_strings["Group_Effects"] = "效果";
 			_strings["Group_Script"] = "腳本";
+			_strings["Group_Scripts"] = "腳本";
 			_strings["Group_File"] = "檔案";
+
+			// Frame helper
+			_strings["Frame_CopyFromCurrentFrame"] = "從目前選取的幀複製";
 
 			// Dialogs
 			_strings["Dialog_ActionInsert"] = "插入動作";

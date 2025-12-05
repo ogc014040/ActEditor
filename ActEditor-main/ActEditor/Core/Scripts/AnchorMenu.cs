@@ -10,6 +10,7 @@ using TokeiLibrary;
 using TokeiLibrary.Paths;
 using Utilities.Extension;
 using Action = GRF.FileFormats.ActFormat.Action;
+using L = ActEditor.ApplicationConfiguration.LocalizationManager;
 
 namespace ActEditor.Core.Scripts {
 	public class EditAnchor : IActScript {
@@ -24,11 +25,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Edit frame anchor position"; }
+			get { return L.S("Script_EditFrameAnchor"); }
 		}
 
 		public string Group {
-			get { return "Anchors"; }
+			get { return L.S("Group_Anchors"); }
 		}
 
 		public string InputGesture {
@@ -117,11 +118,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Set from file..."; }
+			get { return L.S("Script_SetFromFile"); }
 		}
 
 		public string Group {
-			get { return "Anchors/Set anchors"; }
+			get { return L.S("Group_AnchorsSetAnchors"); }
 		}
 
 		public string InputGesture {
@@ -203,11 +204,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Set default (male)"; }
+			get { return L.S("Script_SetDefaultMale"); }
 		}
 
 		public string Group {
-			get { return "Anchors/Set anchors"; }
+			get { return L.S("Group_AnchorsSetAnchors"); }
 		}
 
 		public string InputGesture {
@@ -289,11 +290,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Set default (female)"; }
+			get { return L.S("Script_SetDefaultFemale"); }
 		}
 
 		public string Group {
-			get { return "Anchors/Set anchors"; }
+			get { return L.S("Group_AnchorsSetAnchors"); }
 		}
 
 		public string InputGesture {
@@ -341,11 +342,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Adjust from file..."; }
+			get { return L.S("Script_AdjustFromFile"); }
 		}
 
 		public string Group {
-			get { return "Anchors/Adjust anchors"; }
+			get { return L.S("Group_AnchorsAdjustAnchors"); }
 		}
 
 		public string InputGesture {
@@ -468,11 +469,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Adjust anchors (male)"; }
+			get { return L.S("Script_AdjustAnchorsMale"); }
 		}
 
 		public string Group {
-			get { return "Anchors/Adjust anchors"; }
+			get { return L.S("Group_AnchorsAdjustAnchors"); }
 		}
 
 		public string InputGesture {
@@ -513,11 +514,11 @@ namespace ActEditor.Core.Scripts {
 		}
 
 		public object DisplayName {
-			get { return "Adjust anchors (female)"; }
+			get { return L.S("Script_AdjustAnchorsFemale"); }
 		}
 
 		public string Group {
-			get { return "Anchors/Adjust anchors"; }
+			get { return L.S("Group_AnchorsAdjustAnchors"); }
 		}
 
 		public string InputGesture {
