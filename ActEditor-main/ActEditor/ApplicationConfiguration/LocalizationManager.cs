@@ -376,6 +376,30 @@ namespace ActEditor.ApplicationConfiguration {
 			// GIF Dialog
 			_strings["Gif_FrameIndexFrom"] = "Frame index from";
 			_strings["Gif_FrameIndexTo"] = "Frame index to";
+			_strings["Gif_SpeedInterval"] = "Speed (interval in ms)";
+			_strings["Gif_DoNotShowAgain"] = "Do not show this dialog again (available in the Settings page)";
+			_strings["Gif_Preview"] = "Preview";
+
+			// Action/Frame Insert Dialog
+			_strings["Insert_EditMode"] = "Edit mode : ";
+			_strings["Insert_Delete"] = "Delete";
+			_strings["Insert_CopyTo"] = "Copy to";
+			_strings["Insert_InsertTo"] = "Insert to";
+			_strings["Insert_MoveTo"] = "Move to";
+			_strings["Insert_SwitchTo"] = "Switch to";
+			_strings["Insert_StartIndex"] = "Start index";
+			_strings["Insert_Count"] = "Count";
+			_strings["Insert_DestinationIndex"] = "Destination index";
+			_strings["Insert_SetToLastIndex"] = "Set to last index";
+			_strings["Insert_CopyFromCurrentlySelected"] = "Copy from currently selected";
+			_strings["Insert_Frame"] = "Frame";
+			_strings["Insert_Layers"] = "Layers";
+			_strings["Insert_StartFrame"] = "Start frame";
+			_strings["Insert_TargetFrame"] = "Target frame";
+			_strings["Insert_FramesToAdd"] = "Frames to add";
+			_strings["Insert_LayerIndexes"] = "Layer indexes";
+			_strings["Insert_InterpolationProperties"] = "Interpolation properties";
+			_strings["Insert_LayerTolerance"] = "Layer tolerance";
 
 			// Interpolate Dialog
 			_strings["Interpolate_Offsets"] = "Offsets";
@@ -730,6 +754,30 @@ namespace ActEditor.ApplicationConfiguration {
 			// GIF Dialog
 			_strings["Gif_FrameIndexFrom"] = "起始幀索引";
 			_strings["Gif_FrameIndexTo"] = "結束幀索引";
+			_strings["Gif_SpeedInterval"] = "速度（間隔毫秒）";
+			_strings["Gif_DoNotShowAgain"] = "不再顯示此對話框（可在設定頁面中調整）";
+			_strings["Gif_Preview"] = "預覽";
+
+			// Action/Frame Insert Dialog
+			_strings["Insert_EditMode"] = "編輯模式：";
+			_strings["Insert_Delete"] = "刪除";
+			_strings["Insert_CopyTo"] = "複製至";
+			_strings["Insert_InsertTo"] = "插入至";
+			_strings["Insert_MoveTo"] = "移動至";
+			_strings["Insert_SwitchTo"] = "切換至";
+			_strings["Insert_StartIndex"] = "起始索引";
+			_strings["Insert_Count"] = "數量";
+			_strings["Insert_DestinationIndex"] = "目標索引";
+			_strings["Insert_SetToLastIndex"] = "設為最後索引";
+			_strings["Insert_CopyFromCurrentlySelected"] = "從目前選取複製";
+			_strings["Insert_Frame"] = "幀";
+			_strings["Insert_Layers"] = "圖層";
+			_strings["Insert_StartFrame"] = "起始幀";
+			_strings["Insert_TargetFrame"] = "目標幀";
+			_strings["Insert_FramesToAdd"] = "要新增的幀數";
+			_strings["Insert_LayerIndexes"] = "圖層索引";
+			_strings["Insert_InterpolationProperties"] = "內插屬性";
+			_strings["Insert_LayerTolerance"] = "圖層容差";
 
 			// Interpolate Dialog
 			_strings["Interpolate_Offsets"] = "偏移";

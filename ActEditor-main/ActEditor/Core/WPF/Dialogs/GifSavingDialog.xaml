@@ -28,9 +28,9 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Frame index from" />
-            <Label Grid.Row="1" Content="Frame index to" />
-            <Label Grid.Row="2" Content="Uniform" ToolTipService.ShowDuration="1000000">
+            <Label x:Name="_lblFrameIndexFrom" Grid.Row="0" Content="Frame index from" />
+            <Label x:Name="_lblFrameIndexTo" Grid.Row="1" Content="Frame index to" />
+            <Label x:Name="_lblUniform" Grid.Row="2" Content="Uniform" ToolTipService.ShowDuration="1000000">
                 <Label.ToolTip>
                     <TextBlock>
                                             Adds margin on each side of the printed frames to center them.
@@ -39,7 +39,7 @@
                     </TextBlock>
                 </Label.ToolTip>
             </Label>
-            <Label Grid.Row="3" Content="Background color" ToolTipService.ShowDuration="1000000">
+            <Label x:Name="_lblBackgroundColor" Grid.Row="3" Content="Background color" ToolTipService.ShowDuration="1000000">
                 <Label.ToolTip>
                     <TextBlock>
                                             Change the background color for semi-transparent images. If your website
@@ -48,7 +48,7 @@
                     </TextBlock>
                 </Label.ToolTip>
             </Label>
-            <Label Grid.Row="4" Content="Guidelines color" ToolTipService.ShowDuration="1000000">
+            <Label x:Name="_lblGuidelinesColor" Grid.Row="4" Content="Guidelines color" ToolTipService.ShowDuration="1000000">
                 <Label.ToolTip>
                     <TextBlock>
                                             Change the guidelines color. The guidelines are simply the
@@ -57,8 +57,8 @@
                     </TextBlock>
                 </Label.ToolTip>
             </Label>
-            <Label Grid.Row="6" Content="Speed (interval in ms)" />
-            <Label Grid.Row="7" Content="Delay factor" ToolTipService.ShowDuration="1000000">
+            <Label x:Name="_lblSpeed" Grid.Row="6" Content="Speed (interval in ms)" />
+            <Label x:Name="_lblDelayFactor" Grid.Row="7" Content="Delay factor" ToolTipService.ShowDuration="1000000">
                 <Label.ToolTip>
                     <TextBlock>
                                             This is a multiplier value to change the speed of the animation.
@@ -69,7 +69,7 @@
                     </TextBlock>
                 </Label.ToolTip>
             </Label>
-            <Label Grid.Row="8" Content="Margin" ToolTipService.ShowDuration="1000000">
+            <Label x:Name="_lblMargin" Grid.Row="8" Content="Margin" ToolTipService.ShowDuration="1000000">
                 <Label.ToolTip>
                     <TextBlock>
                                             Adds a margin around the animation. A minimum margin of 1
@@ -92,14 +92,14 @@
                 <ColumnDefinition />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
-            <CheckBox Name="_cbDoNotShow" VerticalAlignment="Center" Margin="3 11 3 3" Padding="5 -8 0 0" VerticalContentAlignment="Center">
-                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center">
+            <CheckBox x:Name="_cbDoNotShow" VerticalAlignment="Center" Margin="3 11 3 3" Padding="5 -8 0 0" VerticalContentAlignment="Center">
+                <TextBlock x:Name="_tbDoNotShow" TextWrapping="Wrap" VerticalAlignment="Center">
                     Do not show this dialog again (available in the Settings page)
                 </TextBlock>
             </CheckBox>
             <DockPanel HorizontalAlignment="Right" Margin="0 0 3 0" Grid.Column="1">
-                <Button Name="_buttonOk" Click="_buttonOk_Click" Content="Ok" Height="24" Margin="3" MinWidth="100" />
-                <Button Name="_buttonCancel" Click="_buttonCancel_Click" Content="Cancel" Height="24" Margin="3" MinWidth="100" />
+                <Button x:Name="_buttonOk" Click="_buttonOk_Click" Content="Ok" Height="24" Margin="3" MinWidth="100" />
+                <Button x:Name="_buttonCancel" Click="_buttonCancel_Click" Content="Cancel" Height="24" Margin="3" MinWidth="100" />
             </DockPanel>
         </Grid>
     </Grid>

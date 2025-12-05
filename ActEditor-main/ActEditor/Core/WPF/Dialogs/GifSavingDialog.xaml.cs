@@ -23,6 +23,7 @@ namespace ActEditor.Core.WPF.Dialogs {
 
 		public GifSavingDialog(Act act, int selectedIndex) : base("Gif saving", "app.ico") {
 			InitializeComponent();
+			ApplyLocalization();
 
 			if (act == null) {
 				Loaded += delegate {
@@ -94,6 +95,21 @@ namespace ActEditor.Core.WPF.Dialogs {
 
 		private void _buttonCancel_Click(object sender, RoutedEventArgs e) {
 			Close();
+		}
+
+		private void ApplyLocalization() {
+			Title = LocalizationManager.S("Dialog_GifSaving");
+			_lblFrameIndexFrom.Content = LocalizationManager.S("Gif_FrameIndexFrom");
+			_lblFrameIndexTo.Content = LocalizationManager.S("Gif_FrameIndexTo");
+			_lblUniform.Content = LocalizationManager.S("Settings_Uniform");
+			_lblBackgroundColor.Content = LocalizationManager.S("Settings_BackgroundColor");
+			_lblGuidelinesColor.Content = LocalizationManager.S("Settings_GuidelinesColor");
+			_lblSpeed.Content = LocalizationManager.S("Gif_SpeedInterval");
+			_lblDelayFactor.Content = LocalizationManager.S("Settings_DelayFactor");
+			_lblMargin.Content = LocalizationManager.S("Settings_Margin");
+			_tbDoNotShow.Text = LocalizationManager.S("Gif_DoNotShowAgain");
+			_buttonOk.Content = LocalizationManager.S("Button_Ok");
+			_buttonCancel.Content = LocalizationManager.S("Button_Cancel");
 		}
 	}
 }
