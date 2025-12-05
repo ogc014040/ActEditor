@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <TabControl Width="200" Name="_mainTabControlBody" Grid.Column="1" Background="{StaticResource TabItemBackground}" >
-                <TabItem Header="Body - m" FontSize="10" Style="{DynamicResource TabItemSimple}" Foreground="{StaticResource TextForeground}">
+                <TabItem Name="_tabBodyMale" Header="Body - m" FontSize="10" Style="{DynamicResource TabItemSimple}" Foreground="{StaticResource TextForeground}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
@@ -33,7 +33,7 @@
                         <ListView Name="_lvCM" Grid.Row="1" FontSize="12" Foreground="{StaticResource TextForeground}" />
                     </Grid>
                 </TabItem>
-                <TabItem Header="Body - f" FontSize="10" Style="{DynamicResource TabItemSimple}">
+                <TabItem Name="_tabBodyFemale" Header="Body - f" FontSize="10" Style="{DynamicResource TabItemSimple}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
@@ -48,7 +48,7 @@
                 </TabItem>
             </TabControl>
             <TabControl Name="_tabControlHead" Width="200" Grid.Column="2" Background="{StaticResource TabItemBackground}">
-                <TabItem Header="Hair - m" FontSize="10" Style="{DynamicResource TabItemSimple}">
+                <TabItem Name="_tabHairMale" Header="Hair - m" FontSize="10" Style="{DynamicResource TabItemSimple}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
@@ -61,7 +61,7 @@
                         <ListView Name="_lvHM" Grid.Row="1" FontSize="12" />
                     </Grid>
                 </TabItem>
-                <TabItem Header="Hair - f" FontSize="10" Style="{DynamicResource TabItemSimple}">
+                <TabItem Name="_tabHairFemale" Header="Hair - f" FontSize="10" Style="{DynamicResource TabItemSimple}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
@@ -90,13 +90,13 @@
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Label Content="Look action" Padding="0" Margin="3" VerticalAlignment="Center" />
+                <Label Name="_lblLookAction" Content="Look action" Padding="0" Margin="3" VerticalAlignment="Center" />
                 <ComboBox Name="_cbDirection" Grid.Column="1" Width="100" VerticalAlignment="Center" Margin="3" HorizontalAlignment="Left" />
-                <Label Content="Grf path (for job sprites)" Padding="0" Grid.Row="1" Margin="3" VerticalAlignment="Center" />
+                <Label Name="_lblGrfPath" Content="Grf path (for job sprites)" Padding="0" Grid.Row="1" Margin="3" VerticalAlignment="Center" />
                 <Styles:PathBrowser Grid.Row="1" Grid.Column="1" x:Name="_pbJob" Filter="GRF Files|*.grf" BrowseMode="File" MinWidth="180" UseSavePath="True" SavePathUniqueName="PreviewSheet - Job - " />
-                <Label Content="Grf palette path" Padding="0" Grid.Row="2" Margin="3" VerticalAlignment="Center" />
+                <Label Name="_lblGrfPalettePath" Content="Grf palette path" Padding="0" Grid.Row="2" Margin="3" VerticalAlignment="Center" />
                 <Styles:PathBrowser Grid.Row="2" Grid.Column="1" x:Name="_pbPalettes" Filter="GRF Files|*.grf" BrowseMode="File" MinWidth="180" UseSavePath="True" SavePathUniqueName="PreviewSheet - Palette - " />
-                <Label Content="Palette" Padding="0" Grid.Row="3" Margin="3" VerticalAlignment="Center" />
+                <Label Name="_lblPalette" Content="Palette" Padding="0" Grid.Row="3" Margin="3" VerticalAlignment="Center" />
                 <StackPanel Grid.Row="3" Grid.Column="1">
                     <CheckBox Name="_cbPalette" Margin="3" HorizontalAlignment="Left" Content="Use pre-defined palette path for each job" />
                     <CheckBox Name="_cbPaletteOld" Margin="23 3 3 3 " HorizontalAlignment="Left" Content="Use old palette pathing version (useful for 2022 or older)" />
@@ -109,7 +109,7 @@
                         </Border>
                     </Grid>
                 </StackPanel>
-                <Label Content="Palette id, start :" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" />
+                <Label Name="_lblPaletteIdStart" Content="Palette id, start :" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" />
                 <DockPanel Grid.Column="1" Grid.Row="4">
                     <Border Margin="3" BorderBrush="Transparent" BorderThickness="1" VerticalAlignment="Center" CornerRadius="1" HorizontalAlignment="Left" >
                         <genericControls:ClickSelectTextBox TextAlignment="Right" BorderThickness="0" x:Name="_tbFrom" VerticalAlignment="Center" Width="150" />
@@ -117,7 +117,7 @@
                     <Label  Content="(ex: 50-70;72;80-200)" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" />
                 </DockPanel>
 
-                <Label Content="Max per line :" Grid.Row="5" VerticalAlignment="Center" />
+                <Label Name="_lblMaxPerLine" Content="Max per line :" Grid.Row="5" VerticalAlignment="Center" />
                 <DockPanel Grid.Row="5" Grid.Column="1">
                     <Border Margin="3" BorderBrush="Transparent" BorderThickness="1" VerticalAlignment="Center" CornerRadius="1" HorizontalAlignment="Left" >
                         <genericControls:ClickSelectTextBox TextAlignment="Right" BorderThickness="0" x:Name="_tbMax" VerticalAlignment="Center" Width="50" />

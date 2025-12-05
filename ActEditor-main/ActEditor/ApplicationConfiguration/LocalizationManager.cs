@@ -525,6 +525,29 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["ExtScript_ChibiGrfUtility"] = "Chibi Grf Utility";
 			_strings["ExtScript_TrimSpriteImages"] = "Trim sprite images (ajust positions)";
 			_strings["ExtScript_CharacterPaletteSheet"] = "Character palette sheet";
+
+			// PreviewSheet Dialog (Palette sheet generator)
+			_strings["PreviewSheet_Title"] = "Palette sheet generator";
+			_strings["PreviewSheet_LookAction"] = "Look action";
+			_strings["PreviewSheet_GrfPath"] = "Grf path (for job sprites)";
+			_strings["PreviewSheet_GrfPalettePath"] = "Grf palette path";
+			_strings["PreviewSheet_Palette"] = "Palette";
+			_strings["PreviewSheet_UsePredefinedPalette"] = "Use pre-defined palette path for each job";
+			_strings["PreviewSheet_UseOldPalette"] = "Use old palette pathing version (useful for 2022 or older)";
+			_strings["PreviewSheet_PaletteIdStart"] = "Palette id, start :";
+			_strings["PreviewSheet_MaxPerLine"] = "Max per line :";
+			_strings["PreviewSheet_ShowBodySprite"] = "Show body sprite";
+			_strings["PreviewSheet_AffectedByPalette"] = "Affected by palette";
+			_strings["PreviewSheet_ShowHeadSprite"] = "Show head sprite";
+			_strings["PreviewSheet_ShowPaletteId"] = "Show palette id";
+			_strings["PreviewSheet_TransparentBackground"] = "Transparent background";
+			_strings["PreviewSheet_ShowShadow"] = "Show shadow";
+			_strings["PreviewSheet_BodyMale"] = "Body - m";
+			_strings["PreviewSheet_BodyFemale"] = "Body - f";
+			_strings["PreviewSheet_HairMale"] = "Hair - m";
+			_strings["PreviewSheet_HairFemale"] = "Hair - f";
+			_strings["PreviewSheet_Generate"] = "Generate";
+			_strings["PreviewSheet_Close"] = "Close";
 		}
 		#endregion
 
@@ -933,6 +956,29 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["ExtScript_ChibiGrfUtility"] = "Chibi GRF 工具";
 			_strings["ExtScript_TrimSpriteImages"] = "裁剪精靈圖像（調整位置）";
 			_strings["ExtScript_CharacterPaletteSheet"] = "角色調色盤表";
+
+			// PreviewSheet Dialog (Palette sheet generator)
+			_strings["PreviewSheet_Title"] = "調色盤表產生器";
+			_strings["PreviewSheet_LookAction"] = "檢視動作";
+			_strings["PreviewSheet_GrfPath"] = "GRF 路徑（職業精靈用）";
+			_strings["PreviewSheet_GrfPalettePath"] = "GRF 調色盤路徑";
+			_strings["PreviewSheet_Palette"] = "調色盤";
+			_strings["PreviewSheet_UsePredefinedPalette"] = "使用每個職業預設的調色盤路徑";
+			_strings["PreviewSheet_UseOldPalette"] = "使用舊版調色盤路徑（適用於 2022 或更早版本）";
+			_strings["PreviewSheet_PaletteIdStart"] = "調色盤 ID，起始：";
+			_strings["PreviewSheet_MaxPerLine"] = "每行最大數量：";
+			_strings["PreviewSheet_ShowBodySprite"] = "顯示身體精靈";
+			_strings["PreviewSheet_AffectedByPalette"] = "受調色盤影響";
+			_strings["PreviewSheet_ShowHeadSprite"] = "顯示頭部精靈";
+			_strings["PreviewSheet_ShowPaletteId"] = "顯示調色盤 ID";
+			_strings["PreviewSheet_TransparentBackground"] = "透明背景";
+			_strings["PreviewSheet_ShowShadow"] = "顯示陰影";
+			_strings["PreviewSheet_BodyMale"] = "身體 - 男";
+			_strings["PreviewSheet_BodyFemale"] = "身體 - 女";
+			_strings["PreviewSheet_HairMale"] = "髮型 - 男";
+			_strings["PreviewSheet_HairFemale"] = "髮型 - 女";
+			_strings["PreviewSheet_Generate"] = "產生";
+			_strings["PreviewSheet_Close"] = "關閉";
 		}
 		#endregion
 	}

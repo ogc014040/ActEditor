@@ -41,8 +41,9 @@ namespace ActEditor.Tools.PaletteSheetGenerator {
 		private readonly bool _isLoaded = false;
 
 		public PreviewSheetDialog()
-			: base("Palette sheet generator", "busy.png", SizeToContent.Manual, ResizeMode.CanResize) {
+			: base(LocalizationManager.S("PreviewSheet_Title"), "busy.png", SizeToContent.Manual, ResizeMode.CanResize) {
 			InitializeComponent();
+			ApplyLocalization();
 			this.ShowInTaskbar = true;
 
 			try {
@@ -123,6 +124,37 @@ namespace ActEditor.Tools.PaletteSheetGenerator {
 			}
 
 			_loadJobs();
+		}
+
+		private void ApplyLocalization() {
+			// Tab headers
+			_tabBodyMale.Header = LocalizationManager.S("PreviewSheet_BodyMale");
+			_tabBodyFemale.Header = LocalizationManager.S("PreviewSheet_BodyFemale");
+			_tabHairMale.Header = LocalizationManager.S("PreviewSheet_HairMale");
+			_tabHairFemale.Header = LocalizationManager.S("PreviewSheet_HairFemale");
+
+			// Labels
+			_lblLookAction.Content = LocalizationManager.S("PreviewSheet_LookAction");
+			_lblGrfPath.Content = LocalizationManager.S("PreviewSheet_GrfPath");
+			_lblGrfPalettePath.Content = LocalizationManager.S("PreviewSheet_GrfPalettePath");
+			_lblPalette.Content = LocalizationManager.S("PreviewSheet_Palette");
+			_lblPaletteIdStart.Content = LocalizationManager.S("PreviewSheet_PaletteIdStart");
+			_lblMaxPerLine.Content = LocalizationManager.S("PreviewSheet_MaxPerLine");
+
+			// Checkboxes
+			_cbPalette.Content = LocalizationManager.S("PreviewSheet_UsePredefinedPalette");
+			_cbPaletteOld.Content = LocalizationManager.S("PreviewSheet_UseOldPalette");
+			_cbShowBodySprite.Content = LocalizationManager.S("PreviewSheet_ShowBodySprite");
+			_cbBodyAffectedPalette.Content = LocalizationManager.S("PreviewSheet_AffectedByPalette");
+			_cbShowHeadSprite.Content = LocalizationManager.S("PreviewSheet_ShowHeadSprite");
+			_cbHeadAffectedPalette.Content = LocalizationManager.S("PreviewSheet_AffectedByPalette");
+			_cbShowPalId.Content = LocalizationManager.S("PreviewSheet_ShowPaletteId");
+			_cTransparentBackground.Content = LocalizationManager.S("PreviewSheet_TransparentBackground");
+			_cShowShadow.Content = LocalizationManager.S("PreviewSheet_ShowShadow");
+
+			// Buttons
+			_buttonGenerate.Content = LocalizationManager.S("PreviewSheet_Generate");
+			_buttonCancel.Content = LocalizationManager.S("PreviewSheet_Close");
 		}
 
 		private void _reloadJobs() {
