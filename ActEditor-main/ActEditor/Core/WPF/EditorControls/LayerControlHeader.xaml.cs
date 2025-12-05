@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using ActEditor.ApplicationConfiguration;
 
 namespace ActEditor.Core.WPF.EditorControls {
 	/// <summary>
@@ -8,6 +9,7 @@ namespace ActEditor.Core.WPF.EditorControls {
 	public partial class LayerControlHeader : UserControl {
 		public LayerControlHeader() {
 			InitializeComponent();
+			ApplyLocalization();
 
 			SizeChanged += delegate {
 				for (int i = 0; i < _grid.ColumnDefinitions.Count; i++) {
@@ -34,6 +36,18 @@ namespace ActEditor.Core.WPF.EditorControls {
 
 			_lab0.Visibility = Visibility.Hidden;
 			_lab1.Visibility = Visibility.Hidden;
+		}
+
+		private void ApplyLocalization() {
+			_lab0.Content = LocalizationManager.S("Layer_Id");
+			_lab1.Content = LocalizationManager.S("Layer_Sprite");
+			_lab2.Content = LocalizationManager.S("Layer_X");
+			_lab3.Content = LocalizationManager.S("Layer_Y");
+			_lab4.Content = LocalizationManager.S("Layer_Mirror");
+			_lab5.Content = LocalizationManager.S("Layer_Color");
+			_lab6.Content = LocalizationManager.S("Layer_ScaleX");
+			_lab7.Content = LocalizationManager.S("Layer_ScaleY");
+			_lab8.Content = LocalizationManager.S("Layer_Angle");
 		}
 	}
 }

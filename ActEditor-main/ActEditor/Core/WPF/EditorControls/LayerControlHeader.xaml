@@ -26,14 +26,14 @@
         <Rectangle Grid.Column="7" Margin="0 0 1 1" Fill="{StaticResource UIGridBackgroundLightBrush}" />
         <Rectangle Grid.Column="8" Margin="0 0 1 1" Fill="{StaticResource UIGridBackgroundLightBrush}" />
 
-        <Label Name="_lab0" Grid.Column="0" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Id" />
-        <Label Name="_lab1" Grid.Column="1" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Sprite" />
-        <Label Grid.Column="2" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="X" />
-        <Label Grid.Column="3" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Y" />
-        <Label Grid.Column="4" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Mirror" />
-        <Label Grid.Column="5" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Color" />
-        <Label Grid.Column="6" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Scale X" FontSize="12" />
-        <Label Grid.Column="7" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Scale Y" FontSize="12" />
-        <Label Grid.Column="8" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Angle" />
+        <Label x:Name="_lab0" Grid.Column="0" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Id" />
+        <Label x:Name="_lab1" Grid.Column="1" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Sprite" />
+        <Label x:Name="_lab2" Grid.Column="2" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="X" />
+        <Label x:Name="_lab3" Grid.Column="3" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Y" />
+        <Label x:Name="_lab4" Grid.Column="4" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Mirror" />
+        <Label x:Name="_lab5" Grid.Column="5" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Color" />
+        <Label x:Name="_lab6" Grid.Column="6" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Scale X" FontSize="12" />
+        <Label x:Name="_lab7" Grid.Column="7" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Scale Y" FontSize="12" />
+        <Label x:Name="_lab8" Grid.Column="8" Padding="0" Margin="-6 0 -5 1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Angle" />
     </Grid>
 </UserControl>

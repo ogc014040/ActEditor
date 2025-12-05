@@ -428,6 +428,22 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Layer_ScaleX"] = "Scale X";
 			_strings["Layer_ScaleY"] = "Scale Y";
 			_strings["Layer_Color"] = "Color";
+			_strings["Layer_Id"] = "Id";
+			_strings["Layer_Sprite"] = "Sprite";
+			_strings["Layer_X"] = "X";
+			_strings["Layer_Y"] = "Y";
+			_strings["Layer_Angle"] = "Angle";
+
+			// Layer Editor Context Menu
+			_strings["LayerMenu_DeleteLayer"] = "Delete layer";
+			_strings["LayerMenu_InvertSelection"] = "Invert selection";
+			_strings["LayerMenu_FrameBringToFront"] = "Frame - Bring to front";
+			_strings["LayerMenu_FrameBringToBack"] = "Frame - Bring to back";
+			_strings["LayerMenu_ActionBringToFront"] = "Action - Bring to front";
+			_strings["LayerMenu_ActionBringToBack"] = "Action - Bring to back";
+			_strings["LayerMenu_Copy"] = "Copy";
+			_strings["LayerMenu_Cut"] = "Cut";
+			_strings["LayerMenu_SelectInSpriteList"] = "Select in sprite list";
 
 			// Frame/Action Selector
 			_strings["Selector_Action"] = "Action";
@@ -806,6 +822,22 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Layer_ScaleX"] = "X 縮放";
 			_strings["Layer_ScaleY"] = "Y 縮放";
 			_strings["Layer_Color"] = "顏色";
+			_strings["Layer_Id"] = "編號";
+			_strings["Layer_Sprite"] = "精靈";
+			_strings["Layer_X"] = "X";
+			_strings["Layer_Y"] = "Y";
+			_strings["Layer_Angle"] = "角度";
+
+			// Layer Editor Context Menu
+			_strings["LayerMenu_DeleteLayer"] = "刪除圖層";
+			_strings["LayerMenu_InvertSelection"] = "反轉選取";
+			_strings["LayerMenu_FrameBringToFront"] = "幀 - 移至最上層";
+			_strings["LayerMenu_FrameBringToBack"] = "幀 - 移至最下層";
+			_strings["LayerMenu_ActionBringToFront"] = "動作 - 移至最上層";
+			_strings["LayerMenu_ActionBringToBack"] = "動作 - 移至最下層";
+			_strings["LayerMenu_Copy"] = "複製";
+			_strings["LayerMenu_Cut"] = "剪下";
+			_strings["LayerMenu_SelectInSpriteList"] = "在精靈清單中選取";
 
 			// Frame/Action Selector
 			_strings["Selector_Action"] = "動作";

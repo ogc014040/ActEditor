@@ -45,6 +45,7 @@ namespace ActEditor.Core.WPF.EditorControls {
 
 		public LayerEditor() {
 			InitializeComponent();
+			ApplyLocalization();
 
 			_displayGrid.ColumnDefinitions[1] = new ColumnDefinition {Width = new GridLength(SystemParameters.VerticalScrollBarWidth)};
 			_timer = new DispatcherTimer();
@@ -972,5 +973,17 @@ namespace ActEditor.Core.WPF.EditorControls {
 		}
 
 		#endregion
+
+		private void ApplyLocalization() {
+			_miDelete.HeaderText = LocalizationManager.S("LayerMenu_DeleteLayer");
+			_miInvert.HeaderText = LocalizationManager.S("LayerMenu_InvertSelection");
+			_miFront.HeaderText = LocalizationManager.S("LayerMenu_FrameBringToFront");
+			_miBack.HeaderText = LocalizationManager.S("LayerMenu_FrameBringToBack");
+			_miActionFront.HeaderText = LocalizationManager.S("LayerMenu_ActionBringToFront");
+			_miActionBack.HeaderText = LocalizationManager.S("LayerMenu_ActionBringToBack");
+			_miCopy.HeaderText = LocalizationManager.S("LayerMenu_Copy");
+			_miCut.HeaderText = LocalizationManager.S("LayerMenu_Cut");
+			_miSelect.HeaderText = LocalizationManager.S("LayerMenu_SelectInSpriteList");
+		}
 	}
 }
