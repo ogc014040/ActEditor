@@ -113,6 +113,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ApplicationConfiguration\ActEditorConfiguration.cs" />
+    <Compile Include="ApplicationConfiguration\LocalizationManager.cs" />
     <Compile Include="ApplicationConfiguration\SelfPatcher.cs" />
     <Compile Include="Core\ActEditorWindow.xaml.cs">
       <DependentUpon>ActEditorWindow.xaml</DependentUpon>
