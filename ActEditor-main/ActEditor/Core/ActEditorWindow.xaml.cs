@@ -100,6 +100,9 @@ namespace ActEditor.Core {
 
 			diag.Display = "Loading Act Editor's scripts...";
 
+			// Apply localization BEFORE loading menus so that script Group names match menu headers
+			ApplyLocalization();
+
 			_loadMenu();
 
 			DragEnter += new DragEventHandler(_actEditorWindow_DragEnter);
@@ -191,9 +194,6 @@ namespace ActEditor.Core {
 					_miNew_Click(null, null);
 				}
 			};
-
-			// Apply localization
-			ApplyLocalization();
 		}
 
 		/// <summary>
