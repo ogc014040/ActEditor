@@ -355,6 +355,23 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Export_OutputDirectory"] = "Output directory";
 			_strings["Export_CurrentSprite"] = "Current sprite";
 			_strings["Export_CurrentFolder"] = "Current folder";
+			_strings["Export_Preset"] = "Preset...";
+
+			// Batch Script Dialog
+			_strings["BatchScript_SourceDirectory"] = "Source directory";
+			_strings["BatchScript_SourceScript"] = "Source script";
+			_strings["BatchScript_UseCurrentFolder"] = "Use current folder";
+			_strings["BatchScript_Script"] = "Script...";
+			_strings["BatchScript_Execute"] = "Execute";
+
+			// Script Runner Dialog
+			_strings["ScriptRunner_Script"] = "Script";
+			_strings["ScriptRunner_Run"] = "Run";
+			_strings["ScriptRunner_New"] = "New";
+			_strings["ScriptRunner_Open"] = "Open...";
+			_strings["ScriptRunner_OpenRecent"] = "Open recent";
+			_strings["ScriptRunner_Save"] = "Save...";
+			_strings["ScriptRunner_ErrorConsole"] = "Error console";
 
 			// GIF Dialog
 			_strings["Gif_FrameIndexFrom"] = "Frame index from";
@@ -692,6 +709,23 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Export_OutputDirectory"] = "輸出目錄";
 			_strings["Export_CurrentSprite"] = "目前的精靈";
 			_strings["Export_CurrentFolder"] = "目前的資料夾";
+			_strings["Export_Preset"] = "預設值...";
+
+			// Batch Script Dialog
+			_strings["BatchScript_SourceDirectory"] = "來源目錄";
+			_strings["BatchScript_SourceScript"] = "來源腳本";
+			_strings["BatchScript_UseCurrentFolder"] = "使用目前的資料夾";
+			_strings["BatchScript_Script"] = "腳本...";
+			_strings["BatchScript_Execute"] = "執行";
+
+			// Script Runner Dialog
+			_strings["ScriptRunner_Script"] = "腳本";
+			_strings["ScriptRunner_Run"] = "執行";
+			_strings["ScriptRunner_New"] = "新增";
+			_strings["ScriptRunner_Open"] = "開啟...";
+			_strings["ScriptRunner_OpenRecent"] = "最近開啟";
+			_strings["ScriptRunner_Save"] = "儲存...";
+			_strings["ScriptRunner_ErrorConsole"] = "錯誤主控台";
 
 			// GIF Dialog
 			_strings["Gif_FrameIndexFrom"] = "起始幀索引";

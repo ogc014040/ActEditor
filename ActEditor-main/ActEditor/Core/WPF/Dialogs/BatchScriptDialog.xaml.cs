@@ -34,6 +34,7 @@ namespace ActEditor.Core.WPF.Dialogs {
 			: base("add.png", "add.png", SizeToContent.Manual, ResizeMode.CanResize) {
 			_editor = editor;
 			InitializeComponent();
+			ApplyLocalization();
 
 			_buttonScript.ContextMenu = new ContextMenu();
 			_buttonScript.ContextMenu.Placement = PlacementMode.Bottom;
@@ -185,6 +186,16 @@ namespace ActEditor.Core.WPF.Dialogs {
 
 		private void _buttonCancel_Click(object sender, RoutedEventArgs e) {
 			Close();
+		}
+
+		private void ApplyLocalization() {
+			Title = LocalizationManager.S("Dialog_BatchScript");
+			_lblSourceDirectory.Content = LocalizationManager.S("BatchScript_SourceDirectory");
+			_lblSourceScript.Content = LocalizationManager.S("BatchScript_SourceScript");
+			_cbCurrentFolder.Content = LocalizationManager.S("BatchScript_UseCurrentFolder");
+			_buttonScript.Content = LocalizationManager.S("BatchScript_Script");
+			_buttonOK.Content = LocalizationManager.S("BatchScript_Execute");
+			_buttonCancel.Content = LocalizationManager.S("Button_Close");
 		}
 	}
 }

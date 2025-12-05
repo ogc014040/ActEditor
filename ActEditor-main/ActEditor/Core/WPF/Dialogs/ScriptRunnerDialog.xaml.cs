@@ -138,6 +138,7 @@ namespace ActEditor.Core.WPF.Dialogs {
 
 		public ScriptRunnerDialog() : base("Script Runner", "dos.png", SizeToContent.WidthAndHeight, ResizeMode.CanResize) {
 			InitializeComponent();
+			ApplyLocalization();
 
 			ShowInTaskbar = true;
 			WindowStartupLocation = WindowStartupLocation.CenterOwner;
@@ -415,6 +416,21 @@ namespace ActEditor.Core.WPF.Dialogs {
 				_rcm.RemoveRecentFile(file);
 				ErrorHandler.HandleException(err);
 			}
+		}
+
+		private void ApplyLocalization() {
+			Title = LocalizationManager.S("Dialog_ScriptRunner");
+			_miScript.Header = LocalizationManager.S("ScriptRunner_Script");
+			_miRun.Header = LocalizationManager.S("ScriptRunner_Run");
+			_miNew.Header = LocalizationManager.S("ScriptRunner_New");
+			_miOpen.Header = LocalizationManager.S("ScriptRunner_Open");
+			_miLoadRecent.Header = LocalizationManager.S("ScriptRunner_OpenRecent");
+			_miSave.Header = LocalizationManager.S("ScriptRunner_Save");
+			_miHelp.Header = LocalizationManager.S("Button_Help");
+			_miClose.Header = LocalizationManager.S("Button_Close");
+			_lblErrorConsole.Content = LocalizationManager.S("ScriptRunner_ErrorConsole");
+			_lblRun.Content = LocalizationManager.S("ScriptRunner_Run");
+			_buttonCancel.Content = LocalizationManager.S("Button_Close");
 		}
 
 		#region Nested type: CompilerErrorView

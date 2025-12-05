@@ -36,7 +36,8 @@ namespace ActEditor.Core.WPF.Dialogs {
 			: base("add.png", "add.png", SizeToContent.Manual, ResizeMode.CanResize) {
 			_editor = editor;
 			InitializeComponent();
-			
+			ApplyLocalization();
+
 			_buttonPreset.ContextMenu.Placement = PlacementMode.Bottom;
 			_buttonPreset.ContextMenu.PlacementTarget = _buttonPreset;
 			_buttonPreset.PreviewMouseRightButtonUp += _disableButton;
@@ -306,6 +307,17 @@ namespace ActEditor.Core.WPF.Dialogs {
 
 		private void _miPreset_Click(object sender, RoutedEventArgs e) {
 			_pathBrowserOutput.Text = ((MenuItem)sender).Header.ToString().ReplaceAll("__", "_");
+		}
+
+		private void ApplyLocalization() {
+			Title = LocalizationManager.S("Dialog_ExtractSprite");
+			_lblSourceDirectory.Content = LocalizationManager.S("Export_SourceDirectory");
+			_lblOutputDirectory.Content = LocalizationManager.S("Export_OutputDirectory");
+			_cbCurrentSprite.Content = LocalizationManager.S("Export_CurrentSprite");
+			_cbCurrentFolder.Content = LocalizationManager.S("Export_CurrentFolder");
+			_buttonPreset.Content = LocalizationManager.S("Export_Preset");
+			_buttonOK.Content = LocalizationManager.S("Button_Export");
+			_buttonCancel.Content = LocalizationManager.S("Button_Close");
 		}
 	}
 }
