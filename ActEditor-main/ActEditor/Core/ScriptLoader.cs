@@ -580,10 +580,14 @@ namespace ActEditor.Core {
 				string res = actScript.DisplayName.ToString();
 				int indexOfEnd = res.IndexOf("__%", 0, StringComparison.Ordinal);
 
+				string displayName;
 				if (indexOfEnd > -1)
-					return res.Substring(indexOfEnd + 3);
+					displayName = res.Substring(indexOfEnd + 3);
 				else
-					return res;
+					displayName = res;
+
+				// Translate external script names if translation exists
+				return ActEditor.ApplicationConfiguration.LocalizationManager.TranslateDisplayName(displayName);
 			}
 
 			return actScript.DisplayName;

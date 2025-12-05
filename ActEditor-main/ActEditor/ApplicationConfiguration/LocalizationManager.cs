@@ -84,6 +84,42 @@ namespace ActEditor.ApplicationConfiguration {
 			return GetString(key);
 		}
 
+		/// <summary>
+		/// Mapping from English display names to localization keys for external scripts
+		/// </summary>
+		private static Dictionary<string, string> _displayNameToKey = new Dictionary<string, string> {
+			{"Magnify", "ExtScript_Magnify"},
+			{"Change selected layers' color", "ExtScript_ChangeSelectedLayersColor"},
+			{"Change all layers' color", "ExtScript_ChangeAllLayersColor"},
+			{"Expand", "ExtScript_Expand"},
+			{"Generate sprite from selection", "ExtScript_GenerateSpriteFromSelection"},
+			{"Remove unused sprites", "ExtScript_RemoveUnusedSprites"},
+			{"Merge layers (new sprites)", "ExtScript_MergeLayers"},
+			{"Add sprite effect [Monkey/Tokeiburu]", "ExtScript_AddSpriteEffect"},
+			{"Add frames from X to Y", "ExtScript_AddFramesFromXToY"},
+			{"Chibi Grf Utility", "ExtScript_ChibiGrfUtility"},
+			{"Trim sprite images (ajust positions)", "ExtScript_TrimSpriteImages"},
+			{"Character palette sheet", "ExtScript_CharacterPaletteSheet"},
+		};
+
+		/// <summary>
+		/// Translates a display name if a translation exists
+		/// </summary>
+		public static string TranslateDisplayName(string displayName) {
+			if (displayName == null)
+				return displayName;
+
+			if (_strings == null)
+				LoadStrings();
+
+			string key;
+			if (_displayNameToKey.TryGetValue(displayName, out key)) {
+				return S(key);
+			}
+
+			return displayName; // Return original if no translation found
+		}
+
 		#region English Strings
 		private static void LoadEnglish() {
 			// Main Menu - File
@@ -475,6 +511,20 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Tool_GrfExplorer"] = "GRF Explorer";
 			_strings["Tool_PaletteEditor"] = "Palette Editor";
 			_strings["Tool_PreviewSheet"] = "Preview sheet";
+
+			// External Scripts (from Scripts folder)
+			_strings["ExtScript_Magnify"] = "Magnify";
+			_strings["ExtScript_ChangeSelectedLayersColor"] = "Change selected layers' color";
+			_strings["ExtScript_ChangeAllLayersColor"] = "Change all layers' color";
+			_strings["ExtScript_Expand"] = "Expand";
+			_strings["ExtScript_GenerateSpriteFromSelection"] = "Generate sprite from selection";
+			_strings["ExtScript_RemoveUnusedSprites"] = "Remove unused sprites";
+			_strings["ExtScript_MergeLayers"] = "Merge layers (new sprites)";
+			_strings["ExtScript_AddSpriteEffect"] = "Add sprite effect [Monkey/Tokeiburu]";
+			_strings["ExtScript_AddFramesFromXToY"] = "Add frames from X to Y";
+			_strings["ExtScript_ChibiGrfUtility"] = "Chibi Grf Utility";
+			_strings["ExtScript_TrimSpriteImages"] = "Trim sprite images (ajust positions)";
+			_strings["ExtScript_CharacterPaletteSheet"] = "Character palette sheet";
 		}
 		#endregion
 
@@ -869,6 +919,20 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["Tool_GrfExplorer"] = "GRF 瀏覽器";
 			_strings["Tool_PaletteEditor"] = "調色盤編輯器";
 			_strings["Tool_PreviewSheet"] = "預覽表";
+
+			// External Scripts (from Scripts folder)
+			_strings["ExtScript_Magnify"] = "放大";
+			_strings["ExtScript_ChangeSelectedLayersColor"] = "變更所選圖層顏色";
+			_strings["ExtScript_ChangeAllLayersColor"] = "變更所有圖層顏色";
+			_strings["ExtScript_Expand"] = "擴展";
+			_strings["ExtScript_GenerateSpriteFromSelection"] = "從選取區產生精靈";
+			_strings["ExtScript_RemoveUnusedSprites"] = "移除未使用的精靈";
+			_strings["ExtScript_MergeLayers"] = "合併圖層（新精靈）";
+			_strings["ExtScript_AddSpriteEffect"] = "新增精靈效果 [Monkey/Tokeiburu]";
+			_strings["ExtScript_AddFramesFromXToY"] = "從 X 到 Y 新增幀";
+			_strings["ExtScript_ChibiGrfUtility"] = "Chibi GRF 工具";
+			_strings["ExtScript_TrimSpriteImages"] = "裁剪精靈圖像（調整位置）";
+			_strings["ExtScript_CharacterPaletteSheet"] = "角色調色盤表";
 		}
 		#endregion
 	}
