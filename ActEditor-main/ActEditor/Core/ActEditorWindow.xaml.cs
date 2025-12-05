@@ -118,6 +118,9 @@ namespace ActEditor.Core {
 					// Update dynamic menu headers after custom scripts are loaded
 					// This handles external scripts that may use hardcoded "Scripts" group name
 					UpdateDynamicMenuHeaders();
+
+					// Recalculate undo/redo margin after all menus are loaded
+					UpdateUndoRedoMargin();
 				}
 				catch (Exception err) {
 					ErrorHandler.HandleException(err);
@@ -255,6 +258,34 @@ namespace ActEditor.Core {
 			// Undo/Redo
 			_tmbUndo.DisplayFormat = LocalizationManager.S("Undo_Action");
 			_tmbRedo.DisplayFormat = LocalizationManager.S("Redo_Action");
+
+			// Update undo/redo button margin after menu text changes
+			UpdateUndoRedoMargin();
+		}
+
+		/// <summary>
+		/// Updates the undo/redo button margin based on menu widths.
+		/// This must be called after menu text changes to recalculate proper positioning.
+		/// </summary>
+		private void UpdateUndoRedoMargin() {
+			// Only update if window is loaded, otherwise defer to Loaded event
+			if (!IsLoaded) {
+				return;
+			}
+
+			// Force layout update so menu items have correct sizes
+			_mainMenu.UpdateLayout();
+
+			// Calculate total width of all menu items
+			double totalWidth = 0;
+			foreach (MenuItem menuItem in _mainMenu.Items) {
+				totalWidth += menuItem.ActualWidth;
+			}
+
+			// Update the margin if we got valid widths
+			if (totalWidth > 0) {
+				_dpUndoRedo.Margin = new Thickness(totalWidth, 0, 0, 0);
+			}
 		}
 
 		/// <summary>
