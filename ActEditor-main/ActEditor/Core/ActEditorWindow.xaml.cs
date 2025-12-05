@@ -114,6 +114,10 @@ namespace ActEditor.Core {
 				try {
 					ScriptLoader.VerifyExampleScriptsInstalled();
 					_scriptLoader.AddScriptsToMenu(this, _mainMenu, _dpUndoRedo);
+
+					// Update dynamic menu headers after custom scripts are loaded
+					// This handles external scripts that may use hardcoded "Scripts" group name
+					UpdateDynamicMenuHeaders();
 				}
 				catch (Exception err) {
 					ErrorHandler.HandleException(err);
@@ -256,6 +260,7 @@ namespace ActEditor.Core {
 		/// <summary>
 		/// Updates dynamically created menu headers when language changes.
 		/// This handles menus created by ScriptLoader (Action, Frame, Animation, Effects, Scripts).
+		/// Also merges duplicate menus that may have been created with different locale names.
 		/// </summary>
 		private void UpdateDynamicMenuHeaders() {
 			// Map of all possible group names (both English and Chinese) to their localization keys
@@ -275,6 +280,7 @@ namespace ActEditor.Core {
 				{"腳本", "Group_Scripts"},
 			};
 
+			// First pass: Update all menu headers to the current locale
 			foreach (MenuItem menuItem in _mainMenu.Items) {
 				// Skip XAML-defined menus (File, Edit, Anchors) - they are handled directly
 				if (menuItem == _miFile || menuItem == _miEdit || menuItem == _miAnchors)
@@ -293,6 +299,65 @@ namespace ActEditor.Core {
 					headerLabel.Content = LocalizationManager.S(key);
 				}
 			}
+
+			// Second pass: Merge duplicate menus (menus with the same header text)
+			MergeDuplicateMenus();
+		}
+
+		/// <summary>
+		/// Merges duplicate top-level menus that have the same header text.
+		/// This can happen when internal scripts use localized names and external scripts use English names.
+		/// </summary>
+		private void MergeDuplicateMenus() {
+			var menusByHeader = new Dictionary<string, MenuItem>();
+			var menusToRemove = new List<MenuItem>();
+
+			foreach (MenuItem menuItem in _mainMenu.Items) {
+				// Skip XAML-defined menus
+				if (menuItem == _miFile || menuItem == _miEdit || menuItem == _miAnchors)
+					continue;
+
+				string headerText = GetMenuHeaderText(menuItem);
+				if (headerText == null)
+					continue;
+
+				if (menusByHeader.ContainsKey(headerText)) {
+					// Duplicate found - merge items into the first menu
+					MenuItem firstMenu = menusByHeader[headerText];
+					foreach (object item in menuItem.Items) {
+						// Don't add duplicate separators at the start
+						if (firstMenu.Items.Count > 0 || !(item is Separator)) {
+							// Clone the item since we can't move it directly
+							if (item is MenuItem) {
+								firstMenu.Items.Add(item);
+							}
+							else if (item is Separator) {
+								firstMenu.Items.Add(new Separator());
+							}
+						}
+					}
+					menusToRemove.Add(menuItem);
+				}
+				else {
+					menusByHeader[headerText] = menuItem;
+				}
+			}
+
+			// Remove duplicate menus
+			foreach (MenuItem menuToRemove in menusToRemove) {
+				_mainMenu.Items.Remove(menuToRemove);
+			}
+		}
+
+		/// <summary>
+		/// Gets the header text of a menu item.
+		/// </summary>
+		private string GetMenuHeaderText(MenuItem menuItem) {
+			Label headerLabel = menuItem.Header as Label;
+			if (headerLabel != null) {
+				return headerLabel.Content as string;
+			}
+			return menuItem.Header as string;
 		}
 
 		private void Undo() {
