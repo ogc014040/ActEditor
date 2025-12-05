@@ -322,20 +322,26 @@ namespace ActEditor.Core {
 					continue;
 
 				if (menusByHeader.ContainsKey(headerText)) {
-					// Duplicate found - merge items into the first menu
+					// Duplicate found - collect items to merge
 					MenuItem firstMenu = menusByHeader[headerText];
+
+					// Collect items from the duplicate menu
+					var itemsToMove = new List<object>();
 					foreach (object item in menuItem.Items) {
+						itemsToMove.Add(item);
+					}
+
+					// Clear the duplicate menu first (removes parent reference)
+					menuItem.Items.Clear();
+
+					// Add items to the first menu
+					foreach (object item in itemsToMove) {
 						// Don't add duplicate separators at the start
 						if (firstMenu.Items.Count > 0 || !(item is Separator)) {
-							// Clone the item since we can't move it directly
-							if (item is MenuItem) {
-								firstMenu.Items.Add(item);
-							}
-							else if (item is Separator) {
-								firstMenu.Items.Add(new Separator());
-							}
+							firstMenu.Items.Add(item);
 						}
 					}
+
 					menusToRemove.Add(menuItem);
 				}
 				else {
