@@ -223,40 +223,38 @@ namespace ActEditor.Core.WPF.Dialogs {
 		/// Applies localization to all UI elements in the settings dialog
 		/// </summary>
 		private void ApplyLocalization() {
-			var L = LocalizationManager.S;
-
 			// Tab Headers
-			_tabGeneral.Header = L("Settings_General");
-			_tabEditorColors.Header = L("Settings_EditorColors");
-			_tabMouse.Header = L("Settings_Mouse");
-			_tabSound.Header = L("Settings_Sound");
-			_tabGifFormat.Header = L("Settings_GifFormat");
-			_tabShellIntegration.Header = L("Settings_ShellIntegration");
-			_tabDebugger.Header = L("Settings_Debugger");
-			_tabShortcuts.Header = L("Settings_Shortcuts");
+			_tabGeneral.Header = LocalizationManager.S("Settings_General");
+			_tabEditorColors.Header = LocalizationManager.S("Settings_EditorColors");
+			_tabMouse.Header = LocalizationManager.S("Settings_Mouse");
+			_tabSound.Header = LocalizationManager.S("Settings_Sound");
+			_tabGifFormat.Header = LocalizationManager.S("Settings_GifFormat");
+			_tabShellIntegration.Header = LocalizationManager.S("Settings_ShellIntegration");
+			_tabDebugger.Header = LocalizationManager.S("Settings_Debugger");
+			_tabShortcuts.Header = LocalizationManager.S("Settings_Shortcuts");
 
 			// Section Titles
-			_lblGeneralTitle.Content = L("Settings_General");
-			_lblEditorColorsTitle.Content = L("Settings_EditorColors");
-			_lblMouseTitle.Content = L("Settings_Mouse");
-			_lblSoundTitle.Content = L("Settings_Sound");
-			_lblShellIntegrationTitle.Content = L("Settings_ShellIntegration");
-			_lblDebuggerTitle.Content = L("Settings_Debugger");
-			_lblShortcutsTitle.Content = L("Settings_Shortcuts");
+			_lblGeneralTitle.Content = LocalizationManager.S("Settings_General");
+			_lblEditorColorsTitle.Content = LocalizationManager.S("Settings_EditorColors");
+			_lblMouseTitle.Content = LocalizationManager.S("Settings_Mouse");
+			_lblSoundTitle.Content = LocalizationManager.S("Settings_Sound");
+			_lblShellIntegrationTitle.Content = LocalizationManager.S("Settings_ShellIntegration");
+			_lblDebuggerTitle.Content = LocalizationManager.S("Settings_Debugger");
+			_lblShortcutsTitle.Content = LocalizationManager.S("Settings_Shortcuts");
 
 			// General Tab
-			_lblReopenLatest.Content = L("Settings_ReopenLatestFile");
-			_lblShowHGrid.Content = L("Settings_ShowHorizontalGridLine");
-			_lblShowVGrid.Content = L("Settings_ShowVerticalGridLine");
-			_tbRefreshLayer.Text = L("Settings_RefreshLayerEditor");
-			_tbUseAliasing.Text = L("Settings_UseAliasing");
-			_tbRealFrameInterval.Text = L("Settings_UseRealFrameInterval");
-			_lblEncoding.Content = L("Settings_DisplayEncoding");
-			_lblTheme.Content = L("Settings_Theme");
-			_lblLanguage.Content = L("Settings_Language");
+			_lblReopenLatest.Content = LocalizationManager.S("Settings_ReopenLatestFile");
+			_lblShowHGrid.Content = LocalizationManager.S("Settings_ShowHorizontalGridLine");
+			_lblShowVGrid.Content = LocalizationManager.S("Settings_ShowVerticalGridLine");
+			_tbRefreshLayer.Text = LocalizationManager.S("Settings_RefreshLayerEditor");
+			_tbUseAliasing.Text = LocalizationManager.S("Settings_UseAliasing");
+			_tbRealFrameInterval.Text = LocalizationManager.S("Settings_UseRealFrameInterval");
+			_lblEncoding.Content = LocalizationManager.S("Settings_DisplayEncoding");
+			_lblTheme.Content = LocalizationManager.S("Settings_Theme");
+			_lblLanguage.Content = LocalizationManager.S("Settings_Language");
 
 			// Button
-			_buttonOk.Content = L("Button_Ok");
+			_buttonOk.Content = LocalizationManager.S("Button_Ok");
 		}
 
 		private void _set(QuickColorSelector qcs, Func<GrfColor> get, Action<GrfColor> set) {
