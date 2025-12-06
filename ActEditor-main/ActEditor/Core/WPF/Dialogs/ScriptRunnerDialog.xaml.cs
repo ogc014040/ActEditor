@@ -431,6 +431,36 @@ namespace ActEditor.Core.WPF.Dialogs {
 			_lblErrorConsole.Content = LocalizationManager.S("ScriptRunner_ErrorConsole");
 			_lblRun.Content = LocalizationManager.S("ScriptRunner_Run");
 			_buttonCancel.Content = LocalizationManager.S("Button_Close");
+			_miCopyError.Header = LocalizationManager.S("ScriptRunner_CopyError");
+			_miCopyAllErrors.Header = LocalizationManager.S("ScriptRunner_CopyAllErrors");
+		}
+
+		private void _miCopyError_Click(object sender, RoutedEventArgs e) {
+			try {
+				var selected = _listView.SelectedItem as CompilerErrorView;
+				if (selected != null) {
+					Clipboard.SetText(string.Format("Line {0}, Col {1}: {2}", selected.Line, selected.Column, selected.Description));
+				}
+			}
+			catch (Exception err) {
+				ErrorHandler.HandleException(err);
+			}
+		}
+
+		private void _miCopyAllErrors_Click(object sender, RoutedEventArgs e) {
+			try {
+				var items = _listView.ItemsSource as IEnumerable<CompilerErrorView>;
+				if (items != null) {
+					StringBuilder sb = new StringBuilder();
+					foreach (var item in items) {
+						sb.AppendLine(string.Format("Line {0}, Col {1}: {2}", item.Line, item.Column, item.Description));
+					}
+					Clipboard.SetText(sb.ToString());
+				}
+			}
+			catch (Exception err) {
+				ErrorHandler.HandleException(err);
+			}
 		}
 
 		#region Nested type: CompilerErrorView

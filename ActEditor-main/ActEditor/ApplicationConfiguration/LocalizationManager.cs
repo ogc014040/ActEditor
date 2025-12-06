@@ -408,6 +408,8 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["ScriptRunner_OpenRecent"] = "Open recent";
 			_strings["ScriptRunner_Save"] = "Save...";
 			_strings["ScriptRunner_ErrorConsole"] = "Error console";
+			_strings["ScriptRunner_CopyError"] = "Copy error message";
+			_strings["ScriptRunner_CopyAllErrors"] = "Copy all errors";
 
 			// GIF Dialog
 			_strings["Gif_FrameIndexFrom"] = "Frame index from";
@@ -839,6 +841,8 @@ namespace ActEditor.ApplicationConfiguration {
 			_strings["ScriptRunner_OpenRecent"] = "最近開啟";
 			_strings["ScriptRunner_Save"] = "儲存...";
 			_strings["ScriptRunner_ErrorConsole"] = "錯誤主控台";
+			_strings["ScriptRunner_CopyError"] = "複製錯誤訊息";
+			_strings["ScriptRunner_CopyAllErrors"] = "複製所有錯誤";
 
 			// GIF Dialog
 			_strings["Gif_FrameIndexFrom"] = "起始幀索引";
